@@ -9,7 +9,13 @@
 .main-login {
   width: 100vw;
   height: 100vh;
-  background-color: #201b2c;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    270deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(47, 40, 65, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,7 +43,7 @@
 }
 
 .card-login {
-  /* height: 80%; */
+  height: 98%;
   width: 60%;
   display: flex;
   justify-content: center;
@@ -45,13 +51,18 @@
   flex-direction: column;
   /* padding: 30px 35px; */
   padding: 4% 4%; /* Updated padding to use percentage */
-  background-color: #2f2841;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
   box-shadow: 0px 10px 40px #00000056;
   z-index: 1;
 }
 
-.card-login > h1 {
+.card-login > h3 {
   color: #00ff88;
   font-weight: 800;
   margin: 0;
@@ -74,7 +85,7 @@
   padding: 14px;
   background: #514869;
   color: #f0ffffde;
-  font-size: 1rem;
+  font-size: 10px;
   outline: none;
   box-shadow: 0px 10px 40px #00000056;
   box-sizing: border-box;
@@ -82,7 +93,8 @@
 
 .textfield > label {
   color: #f0ffffde;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  font-size: 13px;
 }
 
 .textfield > input::placeholder {
@@ -100,6 +112,7 @@
   outline: none;
   text-transform: uppercase;
   font-weight: 800;
+  font-size: 12px;
   letter-spacing: 4px;
   color: #2b134b;
   background-color: #00ff88;
@@ -137,26 +150,6 @@
 }
 
 .custom-shape-divider-bottom-1687452075 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1687452159 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1687452309 {
   position: absolute;
   bottom: 0;
   left: 0;
