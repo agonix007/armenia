@@ -1,0 +1,107 @@
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+:root {
+  --black: rgb(55, 164, 207);
+  --orange: #ff9f1a;
+  --red: #ff9f1a;
+  --vio: #2c2c54;
+  --darkblack: rgb(2, 0, 36);
+  --litegreen: #00ff88;
+  --litegray: #514869;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+  background-color: var(--vio);
+}
+header {
+  z-index: 1000;
+  background: #fff;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+header .navbar a {
+  font-size: 1rem;
+  color: var(--black);
+  margin: 0 1rem;
+}
+
+header .navbar a:hover {
+  color: var(--orange);
+}
+
+header .icons a {
+  font-size: 1.2rem;
+  color: var(--black);
+  margin-left: 1.5rem;
+}
+header .icons a:hover {
+  color: var(--orange);
+}
+.container{
+  background: #fff;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 18px;
+}
+.container h1{
+  text-align: center;
+  color: var(--black);
+}
+.description{
+  padding: 20px 20px;
+}
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box img{
+  border-radius: 18px;
+}
+.description h2{
+  text-transform:capitalize;
+  font-weight: 800;
+  padding: 14px;
+  color: var(--black);
+  line-height: 1px;
+}
+.description p{
+  padding: 16px;
+  font-weight: 500;
+}
+.box-1{
+  padding: 20px;
+  margin: 20px;
+  font-size: 1rem;
+}
+.box-2{
+  padding: 20px;
+  margin: 20px;
+  font-size: 1rem;
+}
+.box-3{
+  padding: 20px;
+  margin: 20px;
+  font-size: 1rem;
+}
+.bnt{
+  background-color:var(--black);
+  color: white;
+  font-size: 1rem;
+  padding: 6px 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+}
