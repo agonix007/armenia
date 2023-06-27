@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Checkout</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Order Details</h2>
+      <div class="box">
+        <h3>Delivery Information</h3>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number:</label>
+          <input type="text" id="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <input type="text" id="city" required />
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pin Code:</label>
+          <input type="text" id="pincode" required />
+        </div>
+        <div class="form-group">
+          <label for="state">State:</label>
+          <input type="text" id="state" required />
+        </div>
+        <div class="form-group">
+          <label for="zipcode">Zip Code:</label>
+          <input type="text" id="zipcode" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <textarea id="address" rows="4" required></textarea>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Delivery Time</h3>
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input type="date" id="date" required />
+        </div>
+        <div class="form-group">
+          <label for="note">Note:</label>
+          <textarea id="note" rows="4" placeholder="Add a note"></textarea>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Payment Method</h3>
+        <div class="radio-group">
+          <input type="radio" id="online" name="payment" value="online" />
+          <label for="online">Online Payment</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="cod" name="payment" value="cod" />
+          <label for="cod">Cash on Delivery</label>
+        </div>
+        <div class="radio-group">
+          <input type="radio" id="pos" name="payment" value="pos" />
+          <label for="pos">POS on Delivery</label>
+        </div>
+      </div>
+
+      <div class="box">
+        <h3>Chosen Products</h3>
+        <div class="product">
+          <img src="./f-img-1.1.png" alt="Product 1" />
+          <div class="quantity">
+            <button>-</button>
+            <input type="text" value="01" />
+            <button>+</button>
+          </div>
+        </div>
+        <div class="product">
+          <img src="./f-img-3.1.png" alt="Product 2" width="300px" />
+          <div class="quantity">
+            <button>-</button>
+            <input type="text" value="01" width="300px" />
+            <button>+</button>
+          </div>
+        </div>
+        <div class="product">
+          <img src="./bag.png" alt="Product 3" width="300px" />
+          <div class="quantity">
+            <button>-</button>
+            <input type="text" value="01" />
+            <button>+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

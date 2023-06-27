@@ -10,12 +10,6 @@
   width: 100vw;
   height: 100vh;
   background: rgb(2, 0, 36);
-  background: linear-gradient(
-    270deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(47, 40, 65, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,7 +37,7 @@
 }
 
 .card-login {
-  height: 98%;
+  height: 96%;
   width: 60%;
   display: flex;
   justify-content: center;
@@ -51,12 +45,7 @@
   flex-direction: column;
   /* padding: 30px 35px; */
   padding: 4% 4%; /* Updated padding to use percentage */
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #2f2841;
   border-radius: 20px;
   box-shadow: 0px 10px 40px #00000056;
   z-index: 1;
@@ -85,7 +74,7 @@
   padding: 14px;
   background: #514869;
   color: #f0ffffde;
-  font-size: 10px;
+  font-size: 12px;
   outline: none;
   box-shadow: 0px 10px 40px #00000056;
   box-sizing: border-box;
