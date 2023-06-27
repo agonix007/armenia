@@ -75,7 +75,7 @@ header .icons a:hover {
   font-weight: 800;
   padding: 14px;
   color: var(--black);
-  line-height: 1px;
+  line-height: 0px;
 }
 .description p{
   padding: 16px;
@@ -100,8 +100,14 @@ header .icons a:hover {
   background-color:var(--black);
   color: white;
   font-size: 1rem;
-  padding: 6px 10px;
+  padding: 8px 18px;
   margin-top: 10px;
   border: none;
   border-radius: 12px;
+  font-weight: 600;
+}
+.bnt:hover{
+  background-color: #ff9f1a;
+  color: black;
+  font-weight: 600;
 }
