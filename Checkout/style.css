@@ -1,8 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
-
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+}
 :root {
-  /* --black:#2c2c54;
-    --orange:#ff9f1a; */
   --black: rgb(55, 164, 207);
   --orange: #ff9f1a;
   --red: #ff9f1a;
@@ -12,37 +16,26 @@
   --litegray: #514869;
 }
 
-* {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  border: none;
-  text-transform: capitalize;
-  transition: all 0.2s linear;
+html {
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+  background-color: var(--vio);
 }
-.heading span {
-  text-transform: uppercase;
-  color: var(--orange);
-}
-
 header {
-  height: 70px;
   z-index: 1000;
   background: #fff;
-  padding: 16px 20px;
+  padding: 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  font: 1rem;
 }
-
 header .navbar a {
+  font-size: 1rem;
   color: var(--black);
   margin: 0 1rem;
-  text-decoration: none;
+  text-transform: capitalize;
 }
 
 header .navbar a:hover {
@@ -50,15 +43,13 @@ header .navbar a:hover {
 }
 
 header .icons a {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--black);
   margin-left: 1.5rem;
 }
-
 header .icons a:hover {
   color: var(--orange);
 }
-
 .container {
   display: flex;
   justify-content: center;
@@ -73,6 +64,7 @@ header .icons a:hover {
   width: 700px;
   background: #fff;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
 }
 
 .container form .row {
@@ -91,7 +83,6 @@ header .icons a:hover {
   padding-bottom: 5px;
   text-transform: uppercase;
 }
-
 .container form .row .col .inputBox {
   margin: 15px 0;
 }
@@ -108,11 +99,12 @@ header .icons a:hover {
   font-size: 15px;
   text-transform: none;
 }
-
-.container form .row .col .inputBox input:focus {
+/* .container form .row .col .inputBox input:focus {
   border: 1px solid #000;
+} */
+input:focus{
+  outline-color:#37a4cf;
 }
-
 .container form .row .col .flex {
   display: flex;
   gap: 15px;
@@ -122,9 +114,31 @@ header .icons a:hover {
   margin-top: 5px;
 }
 
+.amt{
+  display: flex;
+  align-items: center;
+}
+.amt p{
+  font-size: 1.1rem;
+  padding: 2px 8px;
+}
+.amt a{
+  color:white;
+  background-color: #ff9f1a;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.amt a:hover{
+  background: transparent;
+  color: black;
+  border: 1px solid lightgrey;
+}
 .container form .row .col .inputBox img {
   height: 34px;
-  margin-top: 5px;
+  margin-top: 0px;
   filter: drop-shadow(0 0 1px #000);
 }
 
@@ -136,6 +150,8 @@ header .icons a:hover {
   color: #fff;
   margin-top: 5px;
   cursor: pointer;
+  border-radius: 16px;
+  border: none;
 }
 
 .container form .submit-btn:hover {
