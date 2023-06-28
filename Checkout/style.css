@@ -35,7 +35,7 @@ header .navbar a {
   font-size: 1rem;
   color: var(--black);
   margin: 0 1rem;
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 header .navbar a:hover {
@@ -124,12 +124,14 @@ input:focus{
 }
 .amt a{
   color:white;
-  background-color: #ff9f1a;
+  /* background-color: #ff9f1a; */
+  background-color: #f4663e;
   padding: 5px 10px;
   border: none;
   border-radius: 18px;
   font-size: 14px;
   font-weight: 600;
+  text-transform: none;
 }
 .amt a:hover{
   background: transparent;
@@ -146,12 +148,15 @@ input:focus{
   width: 100%;
   padding: 12px;
   font-size: 17px;
-  background: #ff9f1a;
+  /* background: #ff9f1a; */
+  background-color: #f4663e;
   color: #fff;
   margin-top: 5px;
   cursor: pointer;
   border-radius: 16px;
   border: none;
+  text-transform: none;
+  font-weight: 600;
 }
 
 .container form .submit-btn:hover {
