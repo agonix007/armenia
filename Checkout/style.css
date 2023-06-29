@@ -126,9 +126,9 @@ input:focus{
   color:white;
   /* background-color: #ff9f1a; */
   background-color: #f4663e;
-  padding: 5px 10px;
+  padding: 6px 10px;
   border: none;
-  border-radius: 18px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
   text-transform: none;
@@ -161,4 +161,42 @@ input:focus{
 
 .container form .submit-btn:hover {
   background: #37a4cf;
+}
+
+
+/* another
+ */
+ .prod{
+    padding: 10px;
+ }
+ .prod p{
+  font-weight: 600;
+ }
+.pdc {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.pdc h3{
+  text-transform: uppercase;
+  font-family: "Nunito", sans-serif;
+  color: #333;
+}
+.product-image {
+  margin-top: 20px;
+}
+
+.cancel-bton{
+  background-color: #f4663e;
+  color: #ffffff;
+  padding: 6px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.cancel-bton:hover{
+  background: transparent;
+  color: black;
+  border: 1px solid lightgrey;
 }
