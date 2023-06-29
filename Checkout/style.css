@@ -119,14 +119,15 @@ input:focus{
   align-items: center;
 }
 .amt p{
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   padding: 2px 8px;
 }
 .amt a{
   color:white;
   /* background-color: #ff9f1a; */
   background-color: #f4663e;
-  padding: 6px 10px;
+  padding: 7px 10px;
   border: none;
   border-radius: 8px;
   font-size: 14px;
