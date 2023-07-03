@@ -124,3 +124,15 @@
     quantity: 753,
     imageUrl: "https://i.ibb.co/YdJnd9r/woman-Traditional.jpg"
 }
+
+
+{
+    "name": "Ram Das",
+    "email": "abc@gmail.com",
+    "password": "bikupal",
+    "address": "ADDRESS_NOT_SET",
+    "city": "CITY_NOT_SET",
+    "state": "STATE_NOT_SET",
+    "zip": 700001,
+    "walletMoney": 500
+}
