@@ -55,6 +55,7 @@
   color: #00ff88;
   font-weight: 800;
   margin: 0;
+  font-size: 1.8rem;
 }
 
 .textfield {
@@ -74,7 +75,7 @@
   padding: 14px;
   background: #514869;
   color: #f0ffffde;
-  font-size: 12px;
+  font-size: 1rem;
   outline: none;
   box-shadow: 0px 10px 40px #00000056;
   box-sizing: border-box;
@@ -83,7 +84,7 @@
 .textfield > label {
   color: #f0ffffde;
   margin-bottom: 5px;
-  font-size: 13px;
+  font-size: 1rem;
 }
 
 .textfield > input::placeholder {
