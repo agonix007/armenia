@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 const config = require("../config/config");
 
 const userSchema = new mongoose.Schema(
@@ -61,6 +62,14 @@ const userSchema = new mongoose.Schema(
       required: true,
       default: config.default_wallet_money,
     },
+    tokens: [
+      {
+        token: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
   },
   {
     timestamps: true,
@@ -88,6 +97,20 @@ userSchema.methods.isPasswordMatch = async function (password) {
     } else {
       return false;
     }
+  } catch (error) {
+    res.send(error.message);
+  }
+};
+
+userSchema.methods.generateAuthToken = async function () {
+  try {
+    const token = await jwt.sign(
+      { _id: this._id.toString() },
+      process.env.SECRET_KEY
+    );
+    this.tokens = this.tokens.concat({ token: token });
+    await this.save();
+    return token;
   } catch (error) {
     res.send(error.message);
   }
