@@ -4,9 +4,7 @@ const {getCart, addProduct, updateOrDeleteProduct} = require("../controllers/car
 const router = new express.Router();
 
 router.get("/", getCart);
-
 router.post("/", addProduct);
-
 router.patch("/", updateOrDeleteProduct);
 
 module.exports = router;

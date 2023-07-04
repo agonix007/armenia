@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const bcrypt = require("bcryptjs");
 const config = require("../config/config");
 
 const userSchema = new mongoose.Schema(
@@ -25,7 +26,8 @@ const userSchema = new mongoose.Schema(
       type: String,
       trim: true,
       required: true,
-      minlength: true,
+      minlength: 6,
+      maxlength: 12,
       validate(value) {
         if (!value.match(/\d/) || !value.match(/[a-zA-Z]/)) {
           throw new Error(
@@ -64,6 +66,43 @@ const userSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+userSchema.statics.isEmailTaken = async function (email) {
+  try {
+    const userEmail = await this.findOne({ email: email });
+    if (!userEmail) {
+      return false;
+    } else {
+      return true;
+    }
+  } catch (error) {
+    res.send(error.message);
+  }
+};
+
+userSchema.methods.isPasswordMatch = async function (password) {
+  try {
+    const isValid = await bcrypt.compare(password, this.password);
+    if (isValid) {
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    res.send(error.message);
+  }
+};
+
+userSchema.pre("save", async function (next) {
+  try {
+    if (this.isModified("password")) {
+      this.password = await bcrypt.hash(this.password, 10);
+    }
+    next();
+  } catch (error) {
+    res.send(error);
+  }
+});
 
 const User = new mongoose.model("User", userSchema);
 

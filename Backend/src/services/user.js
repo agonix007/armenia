@@ -5,6 +5,20 @@ const getUserById = async (userId) => {
   return user;
 };
 
+const getUserByEmail = async (userEmail) => {
+  const user = await User.findOne({ email: userEmail });
+  return user;
+};
+
+const createUser = async (userBody) => {
+  const isEmailTaken = await User.isEmailTaken(userBody.email);
+  if (isEmailTaken) {
+    throw new Error("Email already taken");
+  }
+  const newUser = new User({ ...userBody });
+  return await newUser.save();
+};
+
 const getUserAddressById = async (userId) => {
   const user = await User.findOne(
     { _id: userId },
@@ -14,16 +28,18 @@ const getUserAddressById = async (userId) => {
 };
 
 const setAddress = async (user, address, city, state, zip) => {
-    user.address = address;
-    user.city = city;
-    user.state = state;
-    user.zip = zip;
+  user.address = address;
+  user.city = city;
+  user.state = state;
+  user.zip = zip;
 
-    await user.save();
+  await user.save();
 };
 
-module.exports= {
-    getUserById,
-    getUserAddressById,
-    setAddress
-}
+module.exports = {
+  getUserById,
+  getUserByEmail,
+  createUser,
+  getUserAddressById,
+  setAddress,
+};
