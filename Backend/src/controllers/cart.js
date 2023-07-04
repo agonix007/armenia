@@ -8,7 +8,7 @@ const {
 const getCart = async (req, res) => {
   try {
     const cart = await getCartByUser(req.body); //req.body will replaced with req.user after auth
-    req.status(200).json(cart);
+    res.status(200).json(cart);
   } catch (error) {
     res.status(500).send(error.message);
   }
@@ -27,7 +27,7 @@ const addProduct = async (req, res) => {
   }
 };
 
-const updateProduct = async (req, res) => {
+const updateOrDeleteProduct = async (req, res) => {
   try {
     if (req.body.quantity > 0) {
       const cart = await updateProductInCart(
@@ -38,7 +38,7 @@ const updateProduct = async (req, res) => {
       res.status(200).json(cart);
     } else {
       const cart = await deleteProductFromcart(req.body, req.body.productId); //req.body will replaced with req.user
-      res.status(200).json(cart);
+      res.status(204).json(cart);
     }
   } catch (error) {
     res.status(500).send(error.message);
@@ -48,5 +48,5 @@ const updateProduct = async (req, res) => {
 module.exports = {
   getCart,
   addProduct,
-  updateProduct,
+  updateOrDeleteProduct,
 };

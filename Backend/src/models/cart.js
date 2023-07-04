@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { productSchema } = require("./product");
+const config = require("../config/config");
 
 const cartSchema = new mongoose.Schema({
   email: {
@@ -15,7 +16,7 @@ const cartSchema = new mongoose.Schema({
   ],
   paymentOptions: {
     type: String,
-    default: "DEFAULT_PAYMENT_OPTION",
+    default: config.default_payment_option,
   },
 });
 

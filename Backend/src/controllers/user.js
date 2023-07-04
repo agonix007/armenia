@@ -22,7 +22,7 @@ const getUser = async (req, res) => {
   }
 };
 
-const setAddresses = async (req, res) => {
+const setFullAddress = async (req, res) => {
   try {
     const id = req.params.id;
     const user = await getUserAddressById(id);
@@ -52,4 +52,4 @@ const setAddresses = async (req, res) => {
   }
 };
 
-module.exports = { getUser, setAddresses };
+module.exports = { getUser, setFullAddress };

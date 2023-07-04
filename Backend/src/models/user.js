@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const config = require("../config/config");
 
 const userSchema = new mongoose.Schema(
   {
@@ -36,27 +37,27 @@ const userSchema = new mongoose.Schema(
     address: {
       type: String,
       trim: true,
-      default: "ADDRESS_NOT_SET",
+      default: config.default_address,
     },
     city: {
       type: String,
       trim: true,
-      default: "CITY_NOT_SET",
+      default: config.default_city,
     },
     state: {
       type: String,
       trim: true,
-      default: "STATE_NOT_SET",
+      default: config.default_state,
     },
     zip: {
       type: Number,
       trim: true,
-      default: 700001,
+      default: config.default_zip,
     },
     walletMoney: {
       type: Number,
       required: true,
-      default: 1000,
+      default: config.default_wallet_money,
     },
   },
   {
