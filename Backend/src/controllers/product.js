@@ -8,7 +8,7 @@ const getProducts = async (req,res) => {
     }
     res.status(200).json(products);
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(500).send(error.message);
   }
 };
 
@@ -19,9 +19,9 @@ const getProductsById = async (req,res) => {
     if (!product) {
       throw new Error("Product not found");
     }
-    res.json(product);
+    res.status(200).json(product);
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(500).send(error.message);
   }
 };
 
