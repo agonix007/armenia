@@ -45,8 +45,17 @@ const updateOrDeleteProduct = async (req, res) => {
   }
 };
 
+const checkout = async (req, res) => {
+  try {
+  
+  } catch (error) {
+    
+  }
+};
+
 module.exports = {
   getCart,
   addProduct,
   updateOrDeleteProduct,
+  checkout
 };
