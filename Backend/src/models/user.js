@@ -28,7 +28,6 @@ const userSchema = new mongoose.Schema(
       trim: true,
       required: true,
       minlength: 6,
-      maxlength: 12,
       validate(value) {
         if (!value.match(/\d/) || !value.match(/[a-zA-Z]/)) {
           throw new Error(
@@ -85,7 +84,7 @@ userSchema.statics.isEmailTaken = async function (email) {
       return true;
     }
   } catch (error) {
-    res.send(error.message);
+    console.log(error.message);
   }
 };
 
@@ -98,7 +97,7 @@ userSchema.methods.isPasswordMatch = async function (password) {
       return false;
     }
   } catch (error) {
-    res.send(error.message);
+    console.log(error.message);
   }
 };
 
@@ -112,7 +111,7 @@ userSchema.methods.generateAuthToken = async function () {
     await this.save();
     return token;
   } catch (error) {
-    res.send(error.message);
+    console.log(error.message);
   }
 };
 

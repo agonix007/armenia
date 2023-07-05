@@ -11,10 +11,10 @@ const getUser = async (req, res) => {
     if (!user) {
       throw new Error("User not found");
     }
-
-    // if (user._id.toString() !== req.user.id) {
-    //   throw new Error("Forbidden");
-    // }
+    //It means user is present in db but accessing other profiles
+    if (user._id.toString() !== req.user.id) {
+      throw new Error("User is not authorized to access");
+    }
 
     res.status(200).json(user);
   } catch (error) {
@@ -30,13 +30,10 @@ const setFullAddress = async (req, res) => {
     if (!user) {
       throw new Error("User not found");
     }
-
-    // if (user.email != req.user.email) {
-    //   throw new ApiError(
-    //     httpStatus.FORBIDDEN,
-    //     "User not authorized to access this resource"
-    //   );
-    // }
+    //It means user is present in db but accessing other profiles
+    if (user.email != req.user.email) {
+      throw new Error("User is not authorized to access");
+    }
 
     await setAddress(
       user,
