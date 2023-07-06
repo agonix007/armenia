@@ -1,10 +1,13 @@
-const Cart = require("../models/cart");
+const {Cart} = require("../models/cart");
 const { Product } = require("../models/product");
 
 const getCartByUser = async (user) => {
   const cart = await Cart.findOne({ email: user.email });
-  if (!cart || cart.cartItems.length === 0) {
+  if (!cart) {
     throw new Error("User doesn't have a cart");
+  }
+  if(cart.cartItems.length === 0) {
+    throw new Error("User cart doesn't have any product");
   }
   return cart;
 };
