@@ -173,7 +173,7 @@ input:focus{
  .prod p{
   font-weight: 600;
  }
-.pdc {
+/* .pdc {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -200,4 +200,27 @@ input:focus{
   background: transparent;
   color: black;
   border: 1px solid lightgrey;
+} */
+
+/* //order summary */
+/* .oder-summary h3{
+  text-align: center;
+} */
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 100px;
+}
+
+th, td {
+  padding: 10px 50px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tfoot {
+  font-weight: bold;
+}
+table{
+  margin-left: 15px;
 }
