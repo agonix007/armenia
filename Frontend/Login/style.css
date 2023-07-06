@@ -101,6 +101,13 @@
   cursor: pointer;
   box-shadow: 0 10px 40px -8px #00ff8052;
 }
+.btn-login:hover{
+  color: aliceblue;
+  background: transparent;
+  border: 1px solid #00ff88;
+  transition: 0.1s all ease-in;
+  transform: scale(1.1);
+}
 
 .card-login p {
   color: #f0ffffde;
@@ -159,4 +166,28 @@
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+}
+@media only screen and (max-width:950px){
+  .card-login{
+    width: 85%;
+  }
+}
+@media only screen  and (max-width:600px){
+  .main-login{
+    flex-direction: column;
+  }
+  .left-login{
+    width: 100%;
+    height: auto;
+  }
+  .right-login{
+    width: 100%;
+    height: auto;
+  }
+  .left-login-image{
+    width: 60vw;
+  }
+ .card-login{
+  width: 90vw;
+ }
 }
