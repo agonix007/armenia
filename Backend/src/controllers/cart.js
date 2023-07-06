@@ -4,6 +4,7 @@ const {
   updateProductInCart,
   deleteProductFromcart,
 } = require("../services/cart");
+const checkouts = require("../services/checkout");
 
 const getCart = async (req, res) => {
   try {
@@ -47,9 +48,10 @@ const updateOrDeleteProduct = async (req, res) => {
 
 const checkout = async (req, res) => {
   try {
-  
+    await checkouts(req.user);
+    res.status(204).send();
   } catch (error) {
-    
+    res.status(500).send(error.message);
   }
 };
 
@@ -57,5 +59,5 @@ module.exports = {
   getCart,
   addProduct,
   updateOrDeleteProduct,
-  checkout
+  checkout,
 };

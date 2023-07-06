@@ -3,7 +3,7 @@ const { Product } = require("../models/product");
 
 const getCartByUser = async (user) => {
   const cart = await Cart.findOne({ email: user.email });
-  if (!cart) {
+  if (!cart || cart.cartItems.length === 0) {
     throw new Error("User doesn't have a cart");
   }
   return cart;
