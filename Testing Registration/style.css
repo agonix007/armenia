@@ -68,6 +68,28 @@ input[type="password"]:focus {
   box-shadow: 0 0 0 0.25rem rgba(16, 235, 191, 0.25);
 }
 
+.circle {
+  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  position: fixed;
+  z-index: -1;
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  top: -140px;
+  right: 1335px;
+  opacity: 0.5;
+}
+
+.circle2 {
+  width: 500px;
+  height: 500px;
+  top: 470px;
+  right: 1100px;
+  opacity: 0.2;
+}
+
 @media screen and (max-width: 768px) {
   .bg-right {
     height: 60%;
@@ -98,5 +120,13 @@ input[type="password"]:focus {
   }
   .form-text {
     font-size: 12px;
+  }
+  .circle1 {
+    top: -10px;
+    right: -174px;
+  }
+  .circle2 {
+    top: 440px;
+    right: -200px;
   }
 }
