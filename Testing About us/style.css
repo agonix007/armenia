@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +28,13 @@ header {
   z-index: 5;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.c-name{
+  font-family: 'Caveat', cursive;
+  color: #073a20;
+}
+.navbar-brand{
+  padding: 0;
 }
 .form1 {
   margin-left: auto;
@@ -131,6 +140,7 @@ li {
   padding: 0 16px 0 16px;
   font-weight: 500;
   text-align: justify;
+  color: rgb(134, 134, 134);
 }
 .box-1 {
   padding: 20px;
@@ -148,19 +158,19 @@ li {
   font-size: 1rem;
 }
 .description .btn {
-  background-color: var(--deepgreen);
+  background-color: var(--green);
   color: #ffffff;
   font-size: 1rem;
   padding: 6px 25px;
   margin-top: 10px;
   margin-left: 14px;
   border-radius: 12px;
-  border: 3px solid var(--deepgreen);
+  border: 2px solid var(--green);
   font-weight: 600;
 }
 .description .btn:hover {
   background-color: white;
-  color: var(--deepgreen);
+  color: var(--green);
 }
 
 /* footer */

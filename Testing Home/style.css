@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -31,6 +33,13 @@ header {
   z-index: 5;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+.c-name{
+  font-family: 'Caveat', cursive;
+  color: #073a20;
+}
+.navbar-brand{
+  padding: 0;
 }
 .form1 {
   margin-left: auto;
