@@ -13,10 +13,13 @@ background-color: #f3f3f3;
     margin: 2rem;
     border-radius: 18px;
     height: 90vh;
-    background-color: #fff;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.backimg img{
+    margin-right: 60px;
 }
 .card{
     width: 500px;
@@ -54,6 +57,7 @@ background-color: #f3f3f3;
     display:flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 .button a{
     text-decoration: none;
@@ -63,7 +67,6 @@ background-color: #f3f3f3;
     border: none;
     border-radius: 8px;
     padding: 8px 16px;
-    margin-top: 10px;
     font-size: 1.2rem;
     box-shadow:0 4px 10px 0 rgba(0, 0, 2, 0.37);
     text-transform: capitalize;
