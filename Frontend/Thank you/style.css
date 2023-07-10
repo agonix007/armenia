@@ -6,7 +6,7 @@
     font-family: 'Open Sans', sans-serif;
 }
 body{
-background-color: #2c2c54;
+background-color: #f3f3f3;
 }
 .container{
     padding: 2rem;
@@ -41,13 +41,14 @@ background-color: #2c2c54;
     text-align: center;
     padding: 5px 10px;
     font-size: 1.5rem;
-    color: rgb(70, 245, 47);
+    color: #47c778;
 }
 .details p{
     text-align: center;
     padding: 5px 15px;
     font-size: 1.3rem;
     font-weight: 500;
+    color: #777676;
 }
 .button{
     display:flex;
@@ -57,7 +58,7 @@ background-color: #2c2c54;
 .button a{
     text-decoration: none;
     color:#fff;
-    background-color: #f77754;
+    background-color: #23bd5e;
     font-weight: 400;
     border: none;
     border-radius: 8px;
@@ -65,9 +66,12 @@ background-color: #2c2c54;
     margin-top: 10px;
     font-size: 1.2rem;
     box-shadow:0 4px 10px 0 rgba(0, 0, 2, 0.37);
+    text-transform: capitalize;
 }
 .button a:hover{
-    background-color: #2c2c54;
+    /* background-color: #2c2c54; */
+    color: #05835d;
+    font-weight: 700;
 }
 .wright{
     font-size: 2.5rem;
