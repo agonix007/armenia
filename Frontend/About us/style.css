@@ -49,55 +49,55 @@ header .icons a {
 header .icons a:hover {
   color: var(--orange);
 }
-.container{
+.container {
   background: #fff;
   padding: 2rem;
   margin: 2rem;
   border-radius: 18px;
 }
-.container h1{
+.container h1 {
   text-align: center;
   color: var(--black);
 }
-.description{
+.description {
   padding: 20px 20px;
 }
-.box{
+.box {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.box img{
+.box img {
   border-radius: 18px;
 }
-.description h2{
-  text-transform:capitalize;
+.description h2 {
+  text-transform: capitalize;
   font-weight: 800;
   padding: 14px;
   color: var(--black);
   line-height: 0px;
 }
-.description p{
+.description p {
   padding: 16px;
   font-weight: 500;
 }
-.box-1{
+.box-1 {
   padding: 20px;
   margin: 20px;
   font-size: 1rem;
 }
-.box-2{
+.box-2 {
   padding: 20px;
   margin: 20px;
   font-size: 1rem;
 }
-.box-3{
+.box-3 {
   padding: 20px;
   margin: 20px;
   font-size: 1rem;
 }
-.bnt{
-  background-color:var(--black);
+.bnt {
+  background-color: var(--black);
   color: white;
   font-size: 1rem;
   padding: 8px 18px;
@@ -106,7 +106,7 @@ header .icons a:hover {
   border-radius: 12px;
   font-weight: 600;
 }
-.bnt:hover{
+.bnt:hover {
   background-color: #ff9f1a;
   color: black;
   font-weight: 600;
