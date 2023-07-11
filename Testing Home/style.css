@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap");
 
 * {
   margin: 0;
@@ -25,7 +25,6 @@ body {
   background-color: #f3f3f3;
 }
 
-
 /* Navbar */
 header {
   position: sticky;
@@ -34,11 +33,11 @@ header {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
-.c-name{
-  font-family: 'Caveat', cursive;
+.c-name {
+  font-family: "Caveat", cursive;
   color: #073a20;
 }
-.navbar-brand{
+.navbar-brand {
   padding: 0;
 }
 .form1 {
@@ -110,8 +109,6 @@ li {
   width: 30px;
 }
 
-
-
 /* Slide container in hero section */
 .home .slide-container .slide .content .btn {
   display: inline-block;
@@ -119,7 +116,7 @@ li {
   border-radius: 0.5em;
   font-weight: bolder;
   font-size: 1.5em;
-  color: var(--vio);
+  color: white;
   cursor: pointer;
   background: var(--green);
   padding: 0.3em 2em;
@@ -127,8 +124,8 @@ li {
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .home .slide-container .slide .content .btn:hover {
-  background: var(--green);
-  color: #fff;
+  background: #3ffd6fd0;
+  color: var(--vio);
 }
 .home {
   position: relative;
@@ -247,8 +244,6 @@ li {
   right: 3em;
 }
 
-
-
 /* Featured products 1*/
 .feature h1,
 .feature h2,
@@ -346,20 +341,36 @@ li {
   color: #ffc000;
 }
 
-
-
 /* Best Products */
+.bestProducts {
+  padding: 20px 15px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.bestProducts .splide {
+  padding: 0 4rem;
+}
+.bestProducts .splide__track {
+  overflow-y: visible;
+}
+/* .splide__track::-webkit-scrollbar {
+  display: none;
+} */
 .bestProducts .best {
   background-color: white;
   height: 150px;
   border-radius: 18px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
-    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 14px 10px 0px,
+    rgba(0, 0, 0, 0.1) 0px 4px 8px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  width: 320px;
 }
 .bestProducts .best .image-container1 {
   height: 150px;
   border-radius: 18px;
+}
+.bestProducts .best p {
+  color: rgb(128, 128, 128);
 }
 .img-bg1 {
   background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
@@ -376,27 +387,40 @@ li {
   );
 }
 .bestProducts .best .image-container1 img {
-  max-width: 150%;
-  max-height: 150%;
+  max-width: 140%;
+  max-height: 140%;
   transform: rotate(-45deg);
   position: relative;
-  top: 20px;
-  left: -40px;
+  top: -26px;
+  left: -30px;
+}
+.bestProducts .best .image-container1 .img2 {
+  transform: rotate(-370deg);
+  top: -30px;
+  left: -35px;
+}
+.bestProducts .best .image-container1 .img3 {
+  transform: rotate(5deg);
+  top: -32px;
+  left: -30px;
 }
 .bestProducts .best .view .btn {
-  border: 3px solid var(--green);
+  border: 1.5px solid var(--green);
   border-radius: 6px;
   background-color: var(--green);
   color: white;
   padding: 1px 20px;
+  transition: all 0.2s ease-in-out;
 }
-
-
+.bestProducts .best .view .btn:hover {
+  color: var(--green);
+  background-color: white;
+}
 
 /* New Arrivals */
 .new-arrival .arrive {
   background-color: white;
-  height: 350px;
+  height: 290px;
   border-radius: 18px;
 }
 .new-arrival h2 {
@@ -414,7 +438,7 @@ li {
   max-width: 100%;
   max-height: 100%;
   width: auto;
-  height: 350px;
+  height: 290px;
   border-top-left-radius: 18px;
   border-bottom-left-radius: 18px;
   object-fit: cover;
@@ -429,25 +453,26 @@ li {
   color: var(--lightdeepgreen);
 }
 .new-arrival .arrive .content .buyNow .btn {
-  border: 3px solid var(--green);
+  border: 1px solid var(--green);
   border-radius: 6px;
   background-color: var(--green);
   color: white;
+  font-weight: bold;
 }
 .new-arrival .arrive .content .buyNow .btn:hover {
   background-color: white;
   color: var(--green);
 }
 .new-arrival .arrive .content .addtocart .btn {
-  border: 3px solid var(--green);
+  border: 1px solid var(--green);
   border-radius: 6px;
+  font-weight: bold;
+  color: var(--green);
 }
 .new-arrival .arrive .content .addtocart .btn:hover {
   background-color: var(--green);
   color: white;
 }
-
-
 
 /* Customer reviews */
 .splide_wrapper2 img {
@@ -460,8 +485,6 @@ li {
 .splide_wrapper2 .star-rating {
   color: #ff9900;
 }
-
-
 
 /* Services */
 .service {
@@ -477,8 +500,6 @@ li {
 .service .box-container .box h3 {
   text-transform: capitalize;
 }
-
-
 
 /* footer */
 .up-footer {
