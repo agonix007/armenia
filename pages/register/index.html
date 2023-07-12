@@ -3,47 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Register</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../css/register.css" />
   </head>
   <body>
     <main>
       <div class="container-fluid">
         <div class="row">
           <div
-            class="col-12 col-md-6 col-lg-6 text-white bg-left d-md-flex d-lg-flex flex-column justify-content-center p-lg-5"
-          >
-            <div class="glass m-4 p-lg-5 p-md-5">
-              <h1 class="fw-bolder mt-md-3 mt-lg-3 mb-md-5 mb-lg-5">
-                Welcome <span>Back!</span>
-              </h1>
-              <p>
-                To keep connected with us please login with your personal info.
-              </p>
-            </div>
-          </div>
-          <div
             class="col-12 col-md-6 col-lg-6 d-flex flex-column justify-content-center align-items-center"
+            id="first-div"
           >
             <div>
               <div class="rounded-circle circle circle1"></div>
               <div class="rounded-circle circle circle2"></div>
-              <div class="rounded-circle circle circle3"></div>
             </div>
 
             <div class="common-width">
-              <h2 class="fw-bolder">Hey, hello&#128075;</h2>
+              <h2 class="fw-bolder">Hey, Whatsup! &#129309;</h2>
               <p class="text-body-secondary mb-4" id="head-p">
-                Enter the information you entered while registering.
+                Register now and unlock exclusive shopping experience.
               </p>
             </div>
             <form class="common-width">
+              <div class="mb-3">
+                <label for="exampleInputName1" class="form-label fw-bold"
+                  >Full Name<span>*</span></label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="exampleInputName1"
+                  placeholder="John Doe"
+                  name="name"
+                  required
+                  autofocus
+                />
+              </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label fw-bold"
                   >Email<span>*</span></label
@@ -53,10 +55,9 @@
                   class="form-control"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
-                  name="email"
                   placeholder="example123@email.com"
+                  name="email"
                   required
-                  autofocus
                 />
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
@@ -70,35 +71,55 @@
                   type="password"
                   class="form-control"
                   id="exampleInputPassword1"
-                  name="password"
                   placeholder="********"
+                  name="password"
                   required
                 />
+                <div id="passwordHelp" class="form-text">
+                  Password must contain one character and one number.
+                </div>
               </div>
-              <div class="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck1"
-                />
-                <label class="form-check-label" for="exampleCheck1"
-                  >Remember me</label
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label fw-bold"
+                  >Confirm Password<span>*</span></label
                 >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="********"
+                  name="cpassword"
+                  required
+                />
+                <div id="passwordHelp" class="form-text">
+                  Password must be the same.
+                </div>
               </div>
               <button
                 type="submit"
                 class="btn btn-grad fw-bold text-white w-100"
               >
-                Login
+                Register
               </button>
             </form>
             <div class="common-width mt-4">
               <p>
-                Don't have an account?
+                Already have an account?
                 <a href="#" class="text-decoration-none text-success"
-                  >Register now</a
+                  >Login now</a
                 >
               </p>
+            </div>
+          </div>
+          <div
+            class="col-12 col-md-6 col-lg-6 text-white bg-right d-md-flex d-lg-flex flex-column justify-content-center p-lg-5"
+            id="second-div"
+          >
+            <div class="glass m-4 p-lg-5 p-md-5">
+              <h1 class="fw-bolder mt-md-3 mt-lg-3 mb-md-5 mb-lg-5">
+                Namaste <span>India!</span>
+              </h1>
+              <p>Enter your details to start the exciting journey with us.</p>
             </div>
           </div>
         </div>

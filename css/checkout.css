@@ -179,7 +179,7 @@ input[type="number"]:focus {
   margin-top: 5px;
   width: 100%;
   color: white;
-  transition: 0.4s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .btn-grad:hover {
   background: white;
