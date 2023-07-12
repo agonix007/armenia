@@ -197,17 +197,17 @@ li {
   text-align: justify;
 }
 .home .slide-container:nth-child(1) .slide {
-  background: url(./images/home-bg-1.jpg) no-repeat;
+  background: url(../images/home/home-bg-1.jpg) no-repeat;
   background-size: cover;
   background-position: center;
 }
 .home .slide-container:nth-child(2) .slide {
-  background: url(./images/home-bg-2.jpg) no-repeat;
+  background: url(../images/home/home-bg-2.jpg) no-repeat;
   background-size: cover;
   background-position: center;
 }
 .home .slide-container:nth-child(3) .slide {
-  background: url(./images/home-bg-3.jpg) no-repeat;
+  background: url(../images/home/home-bg-3.jpg) no-repeat;
   background-size: cover;
   background-position: center;
 }
