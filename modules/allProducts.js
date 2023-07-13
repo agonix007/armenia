@@ -1,6 +1,13 @@
 // const config = require("../config/config");
 import config from "../config/config.js";
 
+toastr.options = {
+  positionClass: "toast-bottom-right",
+  closeButton: true,
+  progressBar: true,
+  timeOut: 3000,
+};
+
 const addingProducts = (data, isLoading) => {
   const allProducts = document.getElementById("allProducts");
   const loader = document.getElementById("loader");
@@ -52,10 +59,14 @@ const getProducts = async () => {
     addingProducts([], true); // Show the loader
 
     const response = await fetch(config.url + `/products`);
+    if(response.ok !== true){
+      throw new Error("Failed to load from backend.");
+    }
     const data = await response.json();
     addingProducts(data, false);
   } catch (error) {
-    console.log(error);
+    console.log(error.message);
+    toastr.error(error.message);
   }
 };
 
