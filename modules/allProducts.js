@@ -21,9 +21,9 @@ const addingProducts = (data, isLoading) => {
     data.forEach((product) => {
       allProducts.innerHTML += `  <div class="col-3">
                   <div
-                    class="imgBox d-flex justify-content-center align-items-center"
+                    class="imgBox d-flex justify-content-center align-items-center" onclick="showProductDetails('${product._id}')"
                   >
-                    <img src=${product.imageUrl} alt="product" />
+                    <img src=${product.imageUrl} alt=${product.pname} />
                   </div>
                   <div class="content p-2 pt-3">
                     <p class="text-capitalize brand mb-0 fw-bold">${product.brand}</p>
@@ -59,7 +59,7 @@ const getProducts = async () => {
     addingProducts([], true); // Show the loader
 
     const response = await fetch(config.url + `/products`);
-    if(response.ok !== true){
+    if (response.ok !== true) {
       throw new Error("Failed to load from backend.");
     }
     const data = await response.json();

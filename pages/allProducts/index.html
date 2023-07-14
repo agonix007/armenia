@@ -97,7 +97,9 @@
             </ul>
             <div class="auth position-relative">
               <div class="login">
-                <a href="../login/index.html"><button type="button" class="btn">Login</button></a>
+                <a href="../login/index.html"
+                  ><button type="button" class="btn">Login</button></a
+                >
               </div>
               <div class="register">
                 <a href="../register/index.html"
@@ -199,6 +201,11 @@
     </footer>
     <!-- footer ends -->
 
+    <script>
+      function showProductDetails(productId) {
+        window.location.href = `/pages/eachproducts/index.html?id=${productId}`;
+      }
+    </script>
     <script type="module" src="../../modules/allProducts.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
