@@ -1,35 +1,38 @@
-let slides = document.querySelectorAll(".slide-container");
-let index = 0;
+import config from "../config/config.js";
 
-function next() {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
+const account = document.getElementById("account");
+const cart = document.getElementById("cartFeature");
+const auth = document.getElementById("authentication");
+
+const isLoggedIn = localStorage.getItem("username") !== null;
+const userSection = document.getElementById("username");
+
+if (isLoggedIn) {
+  let username = localStorage.getItem("username");
+  let firstname = username.split(" ")[0];
+
+  userSection.innerText = `${firstname}`;
+  account.style.display = "block";
+  cart.style.display = "block";
+} else {
+  auth.classList.remove("authenticate");
+  account.style.display = "none";
+  cart.style.display = "none";
 }
 
-function prev() {
-  slides[index].classList.remove("active");
-  index = (index - 1 + slides.length) % slides.length;
-  slides[index].classList.add("active");
-}
+const cook = document.cookie;
+console.log(cook);
 
-document.querySelectorAll(".featured-image-1").forEach((image_1) => {
-  image_1.addEventListener("click", () => {
-    var src = image_1.getAttribute("src");
-    document.querySelector(".big-image-1").src = src;
-  });
-});
+const logoutUser = async () => {
+    try {
+       const response = await fetch(config.url + "/auth/logout");
+       localStorage.removeItem("username");
+       location.reload();
+       console.log(response);
+    } catch (error) {
+        console.log(error.message);
+    }
+};
 
-document.querySelectorAll(".featured-image-2").forEach((image_2) => {
-  image_2.addEventListener("click", () => {
-    var src = image_2.getAttribute("src");
-    document.querySelector(".big-image-2").src = src;
-  });
-});
-
-document.querySelectorAll(".featured-image-3").forEach((image_3) => {
-  image_3.addEventListener("click", () => {
-    var src = image_3.getAttribute("src");
-    document.querySelector(".big-image-3").src = src;
-  });
-});
+const logout = document.getElementById("logout");
+logout.addEventListener("click", logoutUser);

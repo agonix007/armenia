@@ -58,15 +58,26 @@ header {
   background: linear-gradient(to right, #0a9e79 0%, #04b13e 51%, #02b076 100%);
   border-width: 0;
 }
+.dropdown-item:active{
+  background-color: #0ab97f;
+}
 .auth {
   right: -5px;
   display: flex;
-  /* dynamic in Js */
-  /* display: none;  */
 }
-/* dynamic in Js */
-.account {
+.authenticate{
+  display: none; 
+}
+#account {
+  /* dynamic in Js */
   display: none;
+}
+#cartFeature {
+  /* dynamic in Js */
+  display: none;
+}
+#logout{
+  cursor: pointer;
 }
 .register .btn {
   background: linear-gradient(to right, #0a9e79 0%, #04b13e 51%, #02b076 100%);
@@ -95,14 +106,12 @@ li {
 .cart {
   right: -10px;
   display: flex;
-  /* dynamic in Js */
-  display: none;
   align-items: flex-end;
   cursor: pointer;
   padding: 5px;
 }
 .cart:hover {
-  border: 1.5px solid #04b194;
+  /* border: 1px solid #04b194; */
   border-radius: 4px;
 }
 .cart img {

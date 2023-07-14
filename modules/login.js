@@ -20,24 +20,30 @@ const loginUser = async (event) => {
     password: password,
   };
 
-  console.log(userData);
-
   try {
     loader.style.display = "block";
 
     const response = await fetch(config.url + "/auth/login", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(userData),
     });
+    const data = await response.json();
+
     if (response.ok) {
+      // Setting the userName in local storage
+      localStorage.setItem("username", data.name);
+
+      // Showing toastr fo success login
       toastr.success("Login Successful");
+
       // Redirect to home page after a short delay
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 1500);
+      // setTimeout(() => {
+      //   window.location.href = "/";
+      // }, 1500);
     } else {
       throw new Error("Invalid login details");
     }
