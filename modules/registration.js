@@ -7,9 +7,6 @@ toastr.options = {
   timeOut: 3000,
 };
 
-// const registrationForm = document.getElementById("registrationForm");
-// registrationForm.addEventListener("submit", registerUser);
-
 const validatePassword = (passwordInput) => {
   // Regex pattern to check for at least one character and one number
   const pattern = /^(?=.*[a-zA-Z])(?=.*\d).+$/;
