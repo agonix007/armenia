@@ -30,10 +30,11 @@ const loginUser = async (event) => {
       },
       body: JSON.stringify(userData),
     });
-    const data = await response.json();
-    const token = data.tokens[data.tokens.length-1].token;
 
     if (response.ok) {
+      const data = await response.json();
+      const token = data.tokens[data.tokens.length - 1].token;
+      
       // Setting the userName, token in local storage
       localStorage.setItem("username", data.name);
       localStorage.setItem("token", token);
