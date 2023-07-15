@@ -40,9 +40,9 @@ const loginUser = async (event) => {
       toastr.success("Login Successful");
 
       // Redirect to home page after a short delay
-      // setTimeout(() => {
-      //   window.location.href = "/";
-      // }, 1500);
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 1500);
     } else {
       throw new Error("Invalid login details");
     }
