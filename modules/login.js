@@ -25,7 +25,6 @@ const loginUser = async (event) => {
 
     const response = await fetch(config.url + "/auth/login", {
       method: "POST",
-      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
