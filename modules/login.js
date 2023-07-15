@@ -31,10 +31,12 @@ const loginUser = async (event) => {
       body: JSON.stringify(userData),
     });
     const data = await response.json();
+    const token = data.tokens[data.tokens.length-1].token;
 
     if (response.ok) {
-      // Setting the userName in local storage
+      // Setting the userName, token in local storage
       localStorage.setItem("username", data.name);
+      localStorage.setItem("token", token);
 
       // Showing toastr fo success login
       toastr.success("Login Successful");
