@@ -1,0 +1,101 @@
+<header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid mx-5">
+          <a class="navbar-brand fw-bold fs-3 c-name" href="/">Armenia.in</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Search -->
+            <form class="d-flex form1" role="search">
+              <div class="input-group">
+                <div class="form-outline d-flex">
+                  <input
+                    id="search-input"
+                    type="search"
+                    class="form-control"
+                    placeholder="Search products..."
+                    aria-label="Search"
+                  />
+                  <button
+                    id="search-button"
+                    type="submit"
+                    class="btn btn-success position-relative"
+                  >
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+            <!-- Main navbar -->
+            <ul class="navbar-nav ms-5">
+              <li class="nav-item fw-bold">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item fw-bold">
+                <a class="nav-link" href="/products"
+                  >Products</a
+                >
+              </li>
+              <li class="nav-item fw-bold">
+                <a class="nav-link" href="/about">About us</a>
+              </li>
+              <li class="nav-item dropdown fw-bold" id="account">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  id="username"
+                >
+                  Account
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Your Account</a></li>
+                  <li><a class="dropdown-item" href="#">Your Orders</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li class="dropdown-item" id="logout">Logout</li>
+                </ul>
+              </li>
+            </ul>
+            <!-- Authentication -->
+            <div
+              class="auth position-relative authenticate"
+              id="authentication"
+            >
+              <div class="login">
+                <a href="/login"
+                  ><button type="button" class="btn">Login</button></a
+                >
+              </div>
+              <div class="register">
+                <a href="/register"
+                  ><button type="button" class="btn ms-2">Register</button></a
+                >
+              </div>
+            </div>
+            <!-- Cart logo -->
+            <a href="/cart" class="text-decoration-none">
+              <div class="cart position-relative" id="cartFeature">
+                <img
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADtUlEQVR4nO1bzUsVURS/VhbWnDuoRRQRERS1blFRtGjRx8ZNta9WbYoM+lrUOe9RppCVixZWBi3a+BcEFUGE6bvnVZgQRRlWIPSxSELSyIn7ns93fb7nwplpZrzvBwdlRu6d+5vf3PN1FaKKKqqoooo8oA83AtNpV9FZ0/Q1fU/MdwDTB8nklTNgfC9sJkAyeWK+A16kN0imC8DYWjCrCCiHKgFcVEDp5hh3gwweXcqXVgk/kLPsCckwHAeFJDxRYykBlPdiClt8EwDG5hh3k0xtUuFT4/n/zCmWkUn2Ah4uAIUPCs/vKDxjFwFCxzZ4wlhDh3UESIV3jQ3xnF0EcGctMP0w9rBtVhEAmdR+Y/Gf5uQKZYIJKJH/1bkNwgklYIb8U1utIkBmcZ9v+SeaAKYu49nb/QzkJY4A7qyVjN997f5JJiAw+SeWgKDkn0gCgpR/EgmQnNpbXDx99iX/ZBKAd4zg51oAA1JyCHiCi6TCr1MKyKa2W0WAZNwTqPyTRwDdDlT+iSIgDPkniYBQ5K8hFY3lBlY0JmIMUHhr6mUpvBHcwIytoPAXMF0RcZY/07di8TO1Q9gEachfKvyiq8HCJoDCR0UC6LqwCZClI8bbn3Cy6c3CCvS010mm81LRX8NTdYU3oSdqnCzuAkXNkXZ8GdPA2C2Zhqf3/7C/oRdlKGt3M7geGDOzNR8jNYU9y55fXhnK4h3G5cA0FPkiy5iu9ujWl3aDIixIpnaD6d863Yy464tS4bFcmbu7e6EIG6DoY4EAN5M6IGyDLITCTN6KAXSEbQBTAQoPCtsgZ+wB1BW2q5OKjueKmXEIaZ1ovcBrh3Fn1ByIfBxAfdH4eBqDDDZFzYEwI8Hw3R3dB8YRw9+P1GVxtbAJ7ktcB4yDvvv7SQZksMn4HN7E5xNQ1Kx/D6zuVgH13OrqFHdSAaMiKrgVkiF9Td8LYo56xrWg8FTpYUZQ9Dg/Fz0UcXSDwDSk/8bPHLIHGwoBl/457ea7jiVuNr1FDOBiv2sJLBmS2vJBUSAblD7Ha5A6LOIEqJAM6bDY+BQG/cwhGQeMsQ6X3LuYq0oruulnjsCTocZnbWAqw9ccRj9/2vl+fdaX6efkHBO69y/ikgy5nDoUoAL6yynAPOqi6/5+1xJYMiT1AcRg9wAyxhqXTPfynR4cnSJGUaeIqxeAvpZGP3PoYqZkejtLTjAcaSjsVkiG9LWg4oCGXlxT8g8Ok28eXzmMm0Tk8P5PJKjb2sB4UgdFLuPusGsC/wBWFXbxyW/2ywAAAABJRU5ErkJggg=="
+                />
+                <div class="rounded-circle text-center cart-value fw-bold">
+                  10+
+                </div>
+                <span class="fw-bold ms-1 text-black">Cart</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>

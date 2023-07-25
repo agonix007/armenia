@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About us</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../css/aboutUs.css" />
+  </head>
+  <body>
+    <!-- Navbar starts -->
+    {{>navbar}}
+    <!-- Navbar ends -->
+
+    <!-- about us section starts -->
+    <div class="d-flex justify-content-center">
+      <div class="container aboutUs my-5">
+        <h1 class="fw-bolder text-center">About <span>us</span></h1>
+        <div class="box box-1">
+          <img src="../../images/aboutUs/shoe1.jpg" alt="image" width="380px" />
+          <div class="description">
+            <h2>Our short story</h2>
+            <p>
+              Welcome to Armenia, where the passion for leather craftsmanship
+              thrives. We embarked on this journey with a simple yet powerful
+              vision - to bring the experience of genuine leather products to
+              everyone in our country. From the finest shoes to stylish belts
+              and everyday leather goods, we take pride in curating a collection
+              that exudes quality, style, and timeless elegance.
+            </p>
+            <button class="btn">See more</button>
+          </div>
+        </div>
+        <div class="box box-2">
+          <div class="description">
+            <h2>Our Vision</h2>
+            <p>
+              At Armenia, our vision is to redefine the way people connect with
+              leather products. We believe that everyone deserves to experience
+              the unparalleled beauty and craftsmanship of genuine leather. Our
+              aim is to create a gateway for our customers to indulge in the
+              tactile pleasure, durability, and sophistication that leather
+              offers. By bringing together a diverse range of high-quality
+              leather goods, we aspire to become the go-to destination for those
+              seeking authenticity, style, and an unforgettable sensory
+              experience.
+            </p>
+            <button class="btn">See more</button>
+          </div>
+          <img src="../../images/aboutUs/shoe2.jpg" alt="image" width="410px" />
+        </div>
+        <div class="box box-3">
+          <img src="../../images/aboutUs/shoe3.jpg" alt="image" width="380px" />
+          <div class="description">
+            <h2>Our Approach</h2>
+            <p>
+              At Armenia, we blend tradition and innovation to offer you an
+              exceptional shopping experience. Our approach revolves around
+              meticulous attention to detail and a deep understanding of our
+              customers' desires. We source our leather products from skilled
+              artisans who have dedicated their lives to perfecting their craft.
+              By collaborating with these talented individuals, we ensure that
+              each piece in our collection reflects the passion and expertise
+              that goes into its creation. <br /><br />
+
+              Join us on this journey as we invite you to explore our
+              meticulously curated collection of leather products. Discover the
+              joy of owning something truly exceptional, crafted with love and
+              expertise. At Armenia, we strive to go beyond being just a brand –
+              we aim to be your trusted companion on your quest for unparalleled
+              style and the unmistakable allure of leather.
+            </p>
+            <button class="btn">See more</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- about us section ends -->
+
+    <!-- footer starts -->
+    <footer class="footer py-4">
+      {{>footer}}
+    </footer>
+    <!-- footer ends -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

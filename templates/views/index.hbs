@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armenia</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <link rel="stylesheet" href="./css/home.css" />
+  </head>
+  <body>
+    <!-- Navbar starts -->
+    {{>navbar}}
+    <!-- Navbar ends -->
+
+    <!-- Hero section starts -->
+    <section class="home mb-5" id="home">
+      <div class="slide-container active">
+        <div class="slide">
+          <div class="content">
+            <span>nike red shoes</span>
+            <h3>nike metcon shoes</h3>
+            <p>
+              These sneakers are meticulously crafted to provide maximum support
+              for your feet.
+            </p>
+            <a href="#add to cart" class="btn">add to cart</a>
+          </div>
+          <div class="image">
+            <img src="./images/home/home-shoe-1.png" class="shoe" alt="shoe" />
+            <img
+              src="./images/home/home-text-1.png"
+              class="text"
+              alt="shoe-text"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-container">
+        <div class="slide">
+          <div class="content">
+            <span>nike blue shoes</span>
+            <h3>nike metcon shoes</h3>
+            <p>
+              The breathable recycled knit upper keeps your feet cool, while the
+              soft molded EVA footbed cushions each step you take.
+            </p>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+          <div class="image">
+            <img src="./images/home/home-shoe-2.png" class="shoe" alt="shoe" />
+            <img
+              src="./images/home/home-text-2.png"
+              class="text"
+              alt="shoe-text"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="slide-container">
+        <div class="slide">
+          <div class="content">
+            <span>nike yellow shoes</span>
+            <h3>nike metcon shoes</h3>
+            <p>
+              The foolproof EVA sole offers all the necessary traction, ensuring
+              that you stay steady on your feet.
+            </p>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+          <div class="image">
+            <img src="./images/home/home-shoe-3.png" class="shoe" alt="shoe" />
+            <img
+              src="./images/home/home-text-3.png"
+              class="text"
+              alt="shoe-text"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="prev" class="fas fa-chevron-left" onclick="prev()"></div>
+      <div id="next" class="fas fa-chevron-right" onclick="next()"></div>
+    </section>
+    <!-- Hero secton ends -->
+
+    <!-- Best Companies starts-->
+    <section class="container bestProducts feature">
+      <h1 class="text-center mb-5 fw-bold">Best <span>Companies</span></h1>
+      <div class="splide" id="slider4">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide mt-2">
+              <div class="best">
+                <div class="row">
+                  <div class="col-6 image-container1 img-bg1">
+                    <img src="./images/home/l3.png" alt="product" />
+                  </div>
+                  <div
+                    class="col-6 d-flex flex-column justify-content-center px-4"
+                  >
+                    <h4 class="fw-bold">Contacts</h4>
+                    <p class="mb-1 lh-0">Leather Chest Bag</p>
+                    <div class="view">
+                      <button type="button" class="btn">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide mt-2">
+              <div class="best">
+                <div class="row">
+                  <div class="col-6 image-container1 img-bg3">
+                    <img
+                      src="./images/home/l2.png"
+                      alt="product"
+                      class="img3"
+                    />
+                  </div>
+                  <div
+                    class="col-6 d-flex flex-column justify-content-center px-4"
+                  >
+                    <h4 class="fw-bold">Elios</h4>
+                    <p class="mb-1">Leather Wallet for Women</p>
+                    <div class="view">
+                      <button type="button" class="btn">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide mt-2">
+              <div class="best">
+                <div class="row">
+                  <div class="col-6 image-container1 img-bg2">
+                    <img
+                      src="./images/home/shoe1.png"
+                      alt="product"
+                      class="img2"
+                    />
+                  </div>
+                  <div
+                    class="col-6 d-flex flex-column justify-content-center px-4"
+                  >
+                    <h4 class="fw-bold">Mochi</h4>
+                    <p class="mb-1">Men Leather Mocassin</p>
+                    <div class="view">
+                      <button type="button" class="btn">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide mt-2">
+              <div class="best">
+                <div class="row">
+                  <div class="col-6 image-container1 img-bg3">
+                    <img
+                      src="./images/home/l2.png"
+                      alt="product"
+                      class="img3"
+                    />
+                  </div>
+                  <div
+                    class="col-6 d-flex flex-column justify-content-center px-4"
+                  >
+                    <h4 class="fw-bold">Elios</h4>
+                    <p class="mb-1">Leather Wallet for Women</p>
+                    <div class="view">
+                      <button type="button" class="btn">View</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Best Companies ends -->
+
+    <!-- Featured products starts -->
+    <section class="splide_wrapper1 feature">
+      <h2 class="text-center mb-5 fw-bold">Featured <span>Products</span></h2>
+      <div class="splide" id="slider1">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="wrapper">
+                <div class="img-box">
+                  <img src="./images/home/formal-mens.png" alt="product" />
+                </div>
+                <div class="wrapper-content">
+                  <h4>Men Shoes</h4>
+                  <p class="item-price">
+                    <strike>&#x20B9;1000.00</strike> <b>&#x20B9;899.00</b>
+                  </p>
+                  <div class="star-rating">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="px-4 btn fw-bold">Add to Cart</a>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="wrapper">
+                <div class="img-box">
+                  <img src="./images/home/local-wallet.png" alt="product" />
+                </div>
+                <div class="wrapper-content">
+                  <h4>Local Wallet</h4>
+                  <p class="item-price">
+                    <strike>&#x20B9;700.00</strike> <b>&#x20B9;599.00</b>
+                  </p>
+                  <div class="star-rating">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-regular fa-star"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="px-4 btn fw-bold">Add to Cart</a>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="wrapper">
+                <div class="img-box">
+                  <img src="./images/home/bag.png" alt="product" />
+                </div>
+                <div class="wrapper-content">
+                  <h4>Office Bag</h4>
+                  <p class="item-price">
+                    <strike>&#x20B9;500.00</strike> <b>&#x20B9;399.00</b>
+                  </p>
+                  <div class="star-rating">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="px-4 btn fw-bold">Add to Cart</a>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="wrapper">
+                <div class="img-box">
+                  <img src="./images/home/wallet-levis.png" alt="product" />
+                </div>
+                <div class="wrapper-content">
+                  <h4>Levis Wallet</h4>
+                  <p class="item-price">
+                    <strike>&#x20B9;400.00</strike> <b>&#x20B9;369.00</b>
+                  </p>
+                  <div class="star-rating">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-regular fa-star"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="px-4 btn fw-bold">Add to Cart</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="splide_wrapper1 feature2 mb-4">
+      <div class="splide" id="slider2">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="wrapper">
+                <div class="img-box">
+                  <img src="./images/home/product-1.png" alt="product" />
+                </div>
+                <div class="wrapper-content">
+                  <h4>Nike Shoes</h4>
+                  <p class="item-price">
+                    <strike>&#x20B9;400.00</strike> <b>&#x20B9;369.00</b>
+                  </p>
+                  <div class="star-rating">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-regular fa-star"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="px-4 btn fw-bold">Add to Cart</a>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="wrapper">
+                <div class="img-box">
+                  <img src="./images/home/product-2.png" alt="product" />
+                </div>
+                <div class="wrapper-content">
+                  <h4>Nike Shoes</h4>
+                  <p class="item-price">
+                    <strike>&#x20B9;400.00</strike> <b>&#x20B9;369.00</b>
+                  </p>
+                  <div class="star-rating">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="px-4 btn fw-bold">Add to Cart</a>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="wrapper">
+                <div class="img-box">
+                  <img src="./images/home/product-3.png" alt="product" />
+                </div>
+                <div class="wrapper-content">
+                  <h4>Nike Shoes</h4>
+                  <p class="item-price">
+                    <strike>&#x20B9;400.00</strike> <b>&#x20B9;369.00</b>
+                  </p>
+                  <div class="star-rating">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-regular fa-star"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="px-4 btn fw-bold">Add to Cart</a>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide">
+              <div class="wrapper">
+                <div class="img-box">
+                  <img src="./images/home/product-4.png" alt="product" />
+                </div>
+                <div class="wrapper-content">
+                  <h4>Nike Shoes</h4>
+                  <p class="item-price">
+                    <strike>&#x20B9;400.00</strike> <b>&#x20B9;369.00</b>
+                  </p>
+                  <div class="star-rating">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                      <li class="list-inline-item">
+                        <i class="fa-solid fa-star"></i>
+                      </li>
+                    </ul>
+                  </div>
+                  <a href="#" class="px-4 btn fw-bold">Add to Cart</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Featured products ends -->
+
+    <!-- New Arrival starts -->
+    <div class="container new-arrival">
+      <h2 class="text-center mb-4 fw-bold">New <span>Arrivals</span></h2>
+      <div class="row d-flex justify-content-between">
+        <div class="col-5 arrive">
+          <div class="row">
+            <div class="col-6">
+              <div class="image-container">
+                <img src="./images/home/ibelt3.jpg" alt="product" />
+              </div>
+            </div>
+            <div
+              class="col-6 p-3 text-center d-flex flex-column justify-content-center content"
+            >
+              <h4 class="fw-bold fs-3">Special Offer</h4>
+              <p><strike>5 Days</strike>&emsp;<b>2 Days Left</b></p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente, impedit?
+              </p>
+              <p class="fw-bold fs-5">Only For, <span>₹599.50</span></p>
+              <div class="d-flex justify-content-evenly">
+                <div class="buyNow">
+                  <button type="button" class="btn px-2 py-1">Buy now</button>
+                </div>
+                <div class="addtocart">
+                  <button type="button" class="btn px-2 py-1">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-5 arrive">
+          <div class="row">
+            <div class="col-6">
+              <div class="image-container">
+                <img src="./images/home/ibelt2.jpg" alt="product" />
+              </div>
+            </div>
+            <div
+              class="col-6 p-3 text-center d-flex flex-column justify-content-center content"
+            >
+              <h4 class="fw-bold fs-3">Special Offer</h4>
+              <p><strike>5 Days</strike>&emsp;<b>2 Days Left</b></p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente, impedit?
+              </p>
+              <p class="fw-bold fs-5">Only For, <span>₹599.50</span></p>
+              <div class="d-flex justify-content-evenly">
+                <div class="buyNow">
+                  <button type="button" class="btn px-2 py-1">Buy now</button>
+                </div>
+                <div class="addtocart">
+                  <button type="button" class="btn px-2 py-1">
+                    Add to cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- New Arrival ends -->
+
+    <!-- Customer Review starts -->
+    <section class="splide_wrapper2 feature mt-5">
+      <h3 class="text-center mb-4 fw-bold">Customer <span>Reviews</span></h3>
+      <div class="splide" id="slider3">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide bg-white">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                  <div class="row my-4">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                      <img
+                        src="./images/home/pic2.jpeg"
+                        class="rounded-circle shadow-1 mb-4 mb-lg-0"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div
+                      class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0"
+                    >
+                      <h4 class="mb-2 fw-bolder">Rajdeep Seal</h4>
+                      <div class="star-rating mb-3">
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-regular fa-star"></i>
+                          </li>
+                        </ul>
+                      </div>
+                      <p class="mb-0 pb-3">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Necessitatibus illo placeat quas, ipsum cupiditate
+                        explicabo.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide bg-white">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                  <div class="row my-4">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                      <img
+                        src="./images/home/pic3.jpg"
+                        class="rounded-circle shadow-1 mb-4 mb-lg-0"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div
+                      class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0"
+                    >
+                      <h4 class="mb-2 fw-bolder">Bikram Pal</h4>
+                      <div class="star-rating mb-3">
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-regular fa-star"></i>
+                          </li>
+                        </ul>
+                      </div>
+                      <p class="mb-0 pb-3">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Ab, eveniet labore ut necessitatibus sint
+                        obcaecati!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide bg-white">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                  <div class="row my-4">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                      <img
+                        src="./images/home/pic4.jpg"
+                        class="rounded-circle shadow-1 mb-4 mb-lg-0"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div
+                      class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0"
+                    >
+                      <h4 class="mb-2 fw-bolder">Samriddha Mitra</h4>
+                      <div class="star-rating mb-3">
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-regular fa-star"></i>
+                          </li>
+                        </ul>
+                      </div>
+                      <p class="mb-0 pb-3">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quo illum nostrum nesciunt harum nisi voluptate!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide bg-white">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                  <div class="row my-4">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                      <img
+                        src="./images/home/pic1.jpeg"
+                        class="rounded-circle shadow-1 mb-4 mb-lg-0"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div
+                      class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0"
+                    >
+                      <h4 class="mb-2 fw-bolder">Apurba Dutta</h4>
+                      <div class="star-rating mb-3">
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-regular fa-star"></i>
+                          </li>
+                        </ul>
+                      </div>
+                      <p class="mb-0 pb-3">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Officiis dicta maxime dolorem rerum cum enim.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide bg-white">
+              <div class="row d-flex justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                  <div class="row my-4">
+                    <div class="col-lg-4 d-flex justify-content-center">
+                      <img
+                        src="./images/home/pic5.jpg"
+                        class="rounded-circle shadow-1 mb-4 mb-lg-0"
+                        alt="avatar"
+                      />
+                    </div>
+                    <div
+                      class="col-9 col-md-9 col-lg-7 col-xl-8 text-center text-lg-start mx-auto mx-lg-0"
+                    >
+                      <h4 class="mb-2 fw-bolder">Swaraj Dutta</h4>
+                      <div class="star-rating mb-3">
+                        <ul class="list-inline">
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-solid fa-star"></i>
+                          </li>
+                          <li class="list-inline-item">
+                            <i class="fa-regular fa-star"></i>
+                          </li>
+                        </ul>
+                      </div>
+                      <p class="mb-0 pb-3">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Fugiat magni corporis quis, asperiores unde
+                        accusamus?
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Customer review ends -->
+
+    <!-- Services start -->
+    <section class="service mt-5">
+      <div class="box-container d-flex justify-content-evenly">
+        <div class="box text-center">
+          <i class="fas fa-shipping-fast"></i>
+          <h3>fast delivery</h3>
+        </div>
+
+        <div class="box text-center">
+          <i class="fas fa-undo"></i>
+          <h3>10 days replacement policy</h3>
+        </div>
+
+        <div class="box text-center">
+          <i class="fas fa-headset"></i>
+          <h3>24 x 7 support</h3>
+        </div>
+      </div>
+    </section>
+    <!-- services end -->
+
+    <!-- footer starts here -->
+    <footer class="footer pb-4">
+      <a href="#" class="text-decoration-none text-white">
+        <div class="up-footer text-center py-3 mb-5">Back to top</div>
+      </a>
+      {{>footer}}
+    </footer>
+    <!-- footer ends here -->
+
+    <script src="./modules/slider.js"></script>
+    <script type="module" src="./modules/home.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script>
+      var splide1 = new Splide("#slider1", {
+        type: "loop",
+        perPage: 4,
+        perMove: 1,
+        gap: "40px",
+        drag: "free",
+        snap: true,
+        autoplay: true,
+        pagination: false,
+      });
+      splide1.mount();
+
+      var splide2 = new Splide("#slider2", {
+        type: "loop",
+        perPage: 4,
+        perMove: 1,
+        gap: "40px",
+        drag: "free",
+        snap: true,
+        autoplay: true,
+        pagination: false,
+        // direction: "rtl",
+      });
+      splide2.mount();
+
+      var splide3 = new Splide("#slider3", {
+        type: "loop",
+        padding: "5rem",
+        autoplay: true,
+        arrows: false,
+        drag: "free",
+        snap: true,
+        perPage: 2,
+        pagination: false,
+        gap: "20px",
+      });
+      splide3.mount();
+
+      var splide4 = new Splide("#slider4", {
+        type: "loop",
+        perPage: 3,
+        focus: "center",
+        padding: "1.5rem",
+        gap: "80px",
+        height: "250px",
+        drag: "free",
+        snap: true,
+        autoplay: true,
+        pagination: false,
+        arrows: false,
+      });
+      splide4.mount();
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
