@@ -13,6 +13,9 @@ router.get("/register", (req, res) => {
 router.get("/products", (req, res) => {
   res.render("allProducts");
 });
+router.get("/product", (req, res) => {
+  res.render("product");
+});
 router.get("/cart", (req, res) => {
   res.render("cart");
 });
