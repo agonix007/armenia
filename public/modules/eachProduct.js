@@ -51,11 +51,23 @@ const addingData = (data) => {
             <button
               type="submit"
               class="btn btn-grad fw-bold text-white w-100 mt-3"
+              id="addToCartButton"
             >
               Add to Cart<i class="fa-solid fa-cart-shopping ps-3"></i>
             </button>
           </div>`;
+  const addToCartButton = document.getElementById("addToCartButton");
+  addToCartButton.addEventListener("click", () => addToCart());
 };
+
+function addToCart() {
+  console.log(productId);
+  const product = {
+    productId: productId,
+    quantity: 1,
+  }
+  console.log(product);
+}
 
 const getProductDetails = async (productId) => {
   try {

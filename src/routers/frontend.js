@@ -29,7 +29,7 @@ router.get("/successful", (req, res) => {
   res.render("successful");
 });
 router.get("*", (req, res) => {
-  res.status(404).send(`<h1>404 Page not found</h1>`);
+  res.status(404).render("error");
 });
 
 module.exports = router;
