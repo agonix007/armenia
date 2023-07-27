@@ -39,7 +39,7 @@ const addingData = (data) => {
             <h6 class="specialPrice mb-1">Special Price</h6>
             <div class="d-flex align-items-center content">
               <p class="fs-3">&#x20B9;<span class="price">${data.price}</span>&ensp;</p>
-              <p class="fs-5 strike">&#x20B9;499</p>
+              <p class="fs-5 strike">&#x20B9;${data.sprice}</p>
               <span class="ofr">&emsp;35%off</span>
             </div>
             <div class="mt-3">
