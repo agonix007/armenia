@@ -24,7 +24,7 @@ const addProduct = async (req, res) => {
     ); //req.body has replaced with req.user after auth
     res.status(201).json(cart);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).json(error.message);
   }
 };
 

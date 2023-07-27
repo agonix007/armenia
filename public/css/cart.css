@@ -223,10 +223,10 @@ td input {
   height: 30px;
   padding: 5px;
 }
-td a {
+td span {
   color: #ff523b;
   font-size: 12px;
-  text-decoration: none;
+  cursor: pointer;
 }
 td img {
   width: 80px;

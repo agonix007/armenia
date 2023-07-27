@@ -60,13 +60,31 @@ const addingData = (data) => {
   addToCartButton.addEventListener("click", () => addToCart());
 };
 
-function addToCart() {
-  console.log(productId);
-  const product = {
-    productId: productId,
-    quantity: 1,
+const addToCart = async() => {
+  try {
+    const product = {
+      productId: productId,
+      quantity: 1,
+    };
+    const response = await fetch(`/api/cart`, {
+      method: "POST",
+      headers: {
+        Authorization: localStorage.getItem("token"),
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(product),
+    });
+
+    if (!response.ok) {
+      const errorMsg = await response.json();
+      toastr.warning(errorMsg);
+      return
+    }
+    toastr.success("Product added to cart successfully");
+  } catch (error) {
+    console.log(error.message);
+    toastr.error("Error adding item to cart");
   }
-  console.log(product);
 }
 
 const getProductDetails = async (productId) => {
@@ -83,6 +101,9 @@ const getProductDetails = async (productId) => {
 };
 
 getProductDetails(productId);
+
+// const cartIndicator = document.getElementById("cartIndicator");
+// cartIndicator.textContent = localStorage.getItem("cartValue");
 
 const account = document.getElementById("account");
 const cart = document.getElementById("cartFeature");

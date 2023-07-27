@@ -41,86 +41,14 @@
               <th>Subtotal</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div class="cart-info">
-                  <img
-                    src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5b8aa82f-e010-4052-a2e6-d81db2729fd0/air-force-1-high-07-lx-shoes-wb31gJ.png"
-                    alt="Air Force 1 High '07 LX Shoes"
-                  />
-                  <div class="content">
-                    <p class="pname">Air Force 1 High '07 LX</p>
-                    <p class="price py-1">Price ₹500.00</p>
-                    <a href="#">Remove</a>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="input1"
-                  class="form-control"
-                  value="1"
-                />
-              </td>
-              <td>₹600.00</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="cart-info">
-                  <img
-                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/164b0ac6-7e73-4138-883c-1db81177787b/court-vision-low-shoes-Fh1wdP.png"
-                    alt="Court Vision Low"
-                  />
-                  <div class="content">
-                    <p class="pname">Court Vision Low</p>
-                    <p class="price py-1">Price ₹500.00</p>
-                    <a href="#">Remove</a>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="input2"
-                  class="form-control"
-                  value="1"
-                />
-              </td>
-              <td>₹500.00</td>
-            </tr>
-            <tr>
-              <td>
-                <div class="cart-info">
-                  <img
-                    src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/164b0ac6-7e73-4138-883c-1db81177787b/court-vision-low-shoes-Fh1wdP.png"
-                    alt="Dunk High Premium"
-                  />
-                  <div class="content">
-                    <p class="pname">Dunk High Premium</p>
-                    <p class="price py-1">Price ₹500.00</p>
-                    <a href="#">Remove</a>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <input
-                  type="number"
-                  id="input3"
-                  class="form-control"
-                  value="1"
-                />
-              </td>
-              <td>₹500.00</td>
-            </tr>
-            <!-- Other rows... -->
+          <tbody id="cartItems">
+            {{!-- Fetching from js --}}
           </tbody>
         </table>
         <div class="w-100 d-flex justify-content-end">
           <div class="d-flex justify-content-between box2 py-2">
             <span class="fw-bold total">Total:</span>
-            <span>₹1500.00</span>
+            <span id="totalSummary">₹0.00</span>
           </div>
         </div>
       <button
@@ -139,23 +67,6 @@
     </footer>
     <!-- footer ends -->
 
-    <script>
-      //   document.getElementById("myInput").addEventListener("input", function () {
-      //     var inputValue = this.value; // Get the current value of the input field
-      //     if (inputValue < 1) {
-      //       this.value = 1; // Update the value to 1 if it is less than 1
-      //     }
-      //   });
-      var inputs = document.querySelectorAll('input[type="number"]');
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].addEventListener("input", function () {
-          if (this.value < 1) {
-            this.value = 1;
-          }
-        });
-      }
-    </script>
     <script type="module" src="../../modules/cart.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
