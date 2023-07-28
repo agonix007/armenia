@@ -18,14 +18,17 @@ router.get("/products", (req, res) => {
 router.get("/product", (req, res) => {
   res.render("product");
 });
+router.get("/about", (req, res) => {
+  res.render("aboutUs");
+});
+router.get("/account", (req, res) => {
+  res.render("account");
+});
 router.get("/cart", auth, (req, res) => {
   res.render("cart");
 });
 router.get("/checkout", auth, (req, res) => {
   res.render("checkout");
-});
-router.get("/about", (req, res) => {
-  res.render("aboutUs");
 });
 router.get("/successful", auth, (req, res) => {
   res.render("successful");
