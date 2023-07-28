@@ -22,12 +22,14 @@ body{
     justify-content: center;
     flex-direction: column;
     padding: 12px;
-    width: 350px;
+    width: 345px;
     height: 450px;
     border: 1px solid lightgray;
     text-align: center;
     border-radius: 18px;
     background-color: #ffffff;
+    position: relative;
+    left: 30px;
 }
 .profile-container button{
     width:215px;
@@ -61,7 +63,7 @@ body{
     height: 450px;
     border: 1px solid lightgrey;
     padding: 16px;
-    margin:20px 30px;
+    margin:20px 40px;
     border-radius: 18px;
     background-color: #ffffff;
 }
@@ -86,4 +88,72 @@ body{
     margin: 4px;
     padding: 4px;
     cursor: pointer;
+}
+
+.adminpanel{
+    width: 950px;
+    height: 505px;
+    border: 1px solid lightgray;
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 16px;
+    margin: 2px;
+}
+.adminpanel h3{
+    text-align: center;
+    color: #05835d;
+    font-size: 1.5rem;
+}
+.adminpanel span{
+    color: #23bd5e;
+}
+.add-data{
+    padding: 12px;
+}
+.dbox{
+    margin: 10px;
+    font-size: 1.2rem;
+}
+.dbox input{
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    width: 500px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dbox input[type=number] {
+    appearance: textfield;
+  }
+.btn{
+    display: flex;
+}
+.btn input{
+    font-size: 1.1rem;
+    background-color: #23bd5e;
+    color:#ffffff;
+    border: none;
+    padding: 8px 14px;
+    margin: 12px;
+    border-radius: 10px;
+}
+.btn input:hover{
+    background-color:#05835d;
+    color: #ffffff;
+}
+
+.heading h3{
+    position: relative;
+    top: 40px;
+    text-align: center;
+    color: #05835d;
+    font-size: 2rem;
+}
+.heading span{
+    color: #23bd5e;
+    font-size: 2rem;
 }

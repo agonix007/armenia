@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Account</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="heading">
+        <h3>PROFILE<span> SECTION</span></h3>
+    </div>
     <div class="whole-box">
         <div class="profile-container">
-            <img id="profilePicture" src="./images/avatar-1.svg" alt="Profile Picture" class="profile-picture" width="100px">
+            <img id="profilePicture" src="./images/avatar-1.svg" alt="Profile Picture" class="profile-picture"
+                width="100px">
             <h2>Apurba Dutta</h2>
             <p><strong>Bio- </strong> <em>Admin</em></p>
             <button> <a href="#">Logout from all devices</a></button>
@@ -63,7 +67,7 @@
                     <p><strong>Address: </strong></p>
                 </div>
                 <div class="row">
-                    <p>&nbsp;Payradanga, nadia, Kolkata</p>
+                    <p>&nbsp;Payradanga, nadia, kolakata</p>
                 </div>
             </div>
             <hr>
@@ -103,18 +107,93 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        function selectAvatar(avatarOption) {
-            const avatarOptions = document.querySelectorAll('.avatar-option');
-            avatarOptions.forEach(option => option.classList.remove('selected'));
-            avatarOption.classList.add('selected');
+        <div class="adminpanel">
+            <h3>ADMIN <span>PANEL</span></h3>
+            <div class="add-data">
+                <form action="#" method="get">
+                    <div class="dbox">
+                        <label for="pname">
+                            <strong>Product Name :</strong>
+                        </label>
+                        <input type="pname" name="pname" id="pname" placeholder="Jordan air." required
+                            style="margin-left:auto;">
+                    </div>
+                    <hr>
+                    <div class="dbox">
+                        <label for="description">
+                            <strong>Description :</strong>
+                        </label>
+                        <input type="text" name="description" id="description"
+                            placeholder="This is well quality product!" required>
+                    </div>
+                    <hr>
+                    <div class="dbox">
+                        <label for="Price">
+                            <strong>Price (&#8377;) :</strong>
+                        </label>
+                        <input type="number" name="price" id="price" inputmode="numeric" placeholder="1299" required>
+                    </div>
+                    <hr>
+                    <div class="dbox">
+                        <label for="StrikePrice">
+                            <strong>Strike Price (&#8377;) :</strong>
+                        </label>
+                        <input type="number" name="StrikePrice" id="Strikeprice" inputmode="numeric" placeholder="1549"
+                            required>
+                    </div>
+                    <hr>
+                    <div class="dbox">
+                        <label for="Catagories">
+                            <strong>Catagories :</strong>
+                        </label>
+                        <input list="browsers" name="browser" id="browser" placeholder="Gender" required>
+                        <datalist id="browsers">
+                            <option value="Male">
+                            <option value="Female">
+                            <option value="Unisex"></option>
+                        </datalist>
+                    </div>
+                    <hr>
+                    <div class="dbox">
+                        <label for="brand">
+                            <strong>Brand name :</strong>
+                        </label>
+                        <input type="text" name="brand" id="brand" placeholder="Nike" required>
+                    </div>
+                    <hr>
+                    <div class="dbox">
+                        <label for="Quantity">
+                            <strong>Quantity :</strong>
+                        </label>
+                        <input type="number" name="quality" id="Quantity" placeholder="80-Pieces" required>
+                    </div>
+                    <hr>
+                    <div class="dbox">
+                        <label for="url">
+                            <strong>Image Url () :</strong>
+                        </label>
+                        <input type="url" name="qu" id="url" placeholder="https://image.jpg/" required>
+                    </div>
+                    <hr>
+                    <div class="btn">
+                        <input type="submit" value="Add Data">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+            </div>
+        </div>
 
-            const selectedAvatar = avatarOption.querySelector('img').src;
-            document.getElementById('profilePicture').src = selectedAvatar;
-        }
-    </script>
+        <script>
+            function selectAvatar(avatarOption) {
+                const avatarOptions = document.querySelectorAll('.avatar-option');
+                avatarOptions.forEach(option => option.classList.remove('selected'));
+                avatarOption.classList.add('selected');
+
+                const selectedAvatar = avatarOption.querySelector('img').src;
+                document.getElementById('profilePicture').src = selectedAvatar;
+            }
+        </script>
 </body>
 
 </html>
