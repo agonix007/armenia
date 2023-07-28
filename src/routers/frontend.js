@@ -1,6 +1,8 @@
 const express = require("express");
 const router = new express.Router();
 
+const auth = require("../middlewares/auth");
+
 router.get("/", (req, res) => {
   res.render("index");
 });
@@ -16,16 +18,16 @@ router.get("/products", (req, res) => {
 router.get("/product", (req, res) => {
   res.render("product");
 });
-router.get("/cart", (req, res) => {
+router.get("/cart", auth, (req, res) => {
   res.render("cart");
 });
-router.get("/checkout", (req, res) => {
+router.get("/checkout", auth, (req, res) => {
   res.render("checkout");
 });
 router.get("/about", (req, res) => {
   res.render("aboutUs");
 });
-router.get("/successful", (req, res) => {
+router.get("/successful", auth, (req, res) => {
   res.render("successful");
 });
 router.get("*", (req, res) => {

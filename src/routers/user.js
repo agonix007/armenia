@@ -4,7 +4,7 @@ const auth = require("../middlewares/auth");
 
 const router = new express.Router();
 
-router.get("/:id", auth, getUser);
-router.patch("/:id", auth, setFullAddress);
+router.get("/", auth, getUser);
+router.patch("/", auth, setFullAddress);
 
 module.exports = router;
