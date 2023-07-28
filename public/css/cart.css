@@ -54,15 +54,15 @@ header {
   background: linear-gradient(to right, #0a9e79 0%, #04b13e 51%, #02b076 100%);
   border-width: 0;
 }
-.dropdown-item:active{
+.dropdown-item:active {
   background-color: #0ab97f;
 }
 .auth {
   right: -5px;
   display: flex;
 }
-.authenticate{
-  display: none; 
+.authenticate {
+  display: none;
 }
 #account {
   /* dynamic in Js */
@@ -72,7 +72,7 @@ header {
   /* dynamic in Js */
   display: none;
 }
-#logout{
+#logout {
   cursor: pointer;
 }
 .register .btn {
@@ -113,7 +113,7 @@ li {
 .cart img {
   width: 38px;
 }
-.cart-value{
+.cart-value {
   position: absolute;
   top: 8px;
   left: 20px;
@@ -122,7 +122,6 @@ li {
   width: 26px;
   font-size: 10px;
 }
-
 
 /* footer */
 .footer {
@@ -186,6 +185,14 @@ tr td input {
   padding: 30px;
   width: 80vw;
 }
+#sorry {
+  font-size: 20px;
+  display: none;
+}
+#cart-items {
+  display: none;
+  width: 100%;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -232,6 +239,7 @@ td img {
   width: 80px;
   height: 80px;
   margin-right: 10px;
+  cursor: pointer;
 }
 td:last-child {
   text-align: right;
@@ -250,16 +258,16 @@ th:nth-last-child(2) {
 }
 
 /* total section */
-.box2{
-    padding-left: 5px;
-    padding-right: 5px;
-    border-top: 2px solid rgb(184, 184, 184);
-    border-bottom: 2px solid rgb(184, 184, 184);
-    width: 18%;
+.box2 {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top: 2px solid rgb(184, 184, 184);
+  border-bottom: 2px solid rgb(184, 184, 184);
+  width: 18%;
 }
-.box2 .total{
-    color: var(--green);
-    font-size: 18px;
+.box2 .total {
+  color: var(--green);
+  font-size: 18px;
 }
 
 .btn-grad {

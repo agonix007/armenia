@@ -17,6 +17,7 @@ const addingAndRemovingCartItems = (items) => {
                   <img
                     src="${detail.product.imageUrl}"
                     alt="${detail.product.pname}"
+                    onclick="showProductDetails('${detail.product._id}')"
                   />
                   <div class="content">
                     <p class="pname">${detail.product.pname}</p>
@@ -126,6 +127,9 @@ const addingAndRemovingCartItems = (items) => {
   });
 };
 
+const sorry = document.getElementById("sorry");
+const cartItems = document.getElementById("cart-items");
+
 const getCartItems = async () => {
   try {
     const response = await fetch(`/api/cart`, {
@@ -135,6 +139,15 @@ const getCartItems = async () => {
         "Content-Type": "application/json",
       },
     });
+    if (!response.ok) {
+      sorry.style.display = "block";
+      cartItems.style.display = "none";
+      const errorMsg = await response.json();
+      toastr.warning(errorMsg);
+      return;
+    }
+    sorry.style.display = "none";
+    cartItems.style.display = "block";
     const data = await response.json();
     addingAndRemovingCartItems(data.cartItems);
     // updateCartIndicator(data.cartItems.length);
@@ -145,6 +158,13 @@ const getCartItems = async () => {
 };
 
 getCartItems();
+
+const checkoutBtn = document.getElementById("checkout");
+checkoutBtn.addEventListener("click", () => checkout());
+
+const checkout = () => {
+  window.location.href = "/checkout";
+}
 
 // const updateCartIndicator = (count) => {
 //   const cartIndicator = document.getElementById("cartIndicator");

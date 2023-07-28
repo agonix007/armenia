@@ -83,7 +83,7 @@ const addToCart = async() => {
     toastr.success("Product added to cart successfully");
   } catch (error) {
     console.log(error.message);
-    toastr.error("Error adding item to cart");
+    toastr.info("Please login to join the journey");
   }
 }
 

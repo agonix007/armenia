@@ -11,7 +11,7 @@ const getCart = async (req, res) => {
     const cart = await getCartByUser(req.user); //req.body has replaced with req.user after auth
     res.status(200).json(cart);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).json(error.message);
   }
 };
 
@@ -42,16 +42,16 @@ const updateOrDeleteProduct = async (req, res) => {
       res.status(204).json(cart);
     }
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).json(error.message);
   }
 };
 
 const checkout = async (req, res) => {
   try {
     await checkouts(req.user);
-    res.status(204).send();
+    res.status(204).json();
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).json(error.message);
   }
 };
 
