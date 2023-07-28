@@ -28,8 +28,6 @@ body{
     text-align: center;
     border-radius: 18px;
     background-color: #ffffff;
-    position: relative;
-    top: 4px;
 }
 .profile-container button{
     width:215px;
