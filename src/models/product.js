@@ -15,6 +15,10 @@ const productSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
+  sprice: {
+    type: Number,
+    trim: true,
+  },
   category: {
     type: String,
     trim: true,
