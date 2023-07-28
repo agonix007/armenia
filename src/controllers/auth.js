@@ -9,13 +9,12 @@ const register = async (req, res) => {
       throw new Error("Passwords are not matching.");
     }
     const user = await createUser(req.body);
-    await user.generateAuthToken();
-    // res.cookie("jwt", token, {
-    //   sameSite: "none",
-    //   expires: new Date(Date.now() + 5 * 60 * 1000),
-    //   httpOnly: true,
-    //   secure: true,
-    // });
+    const token = await user.generateAuthToken();
+    res.cookie("jwt", token, {
+      // sameSite: "none",
+      httpOnly: true,
+      // secure: true,
+    });
     res.status(201).json(user);
   } catch (error) {
     res.status(400).send(error.message);
@@ -26,13 +25,13 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await loginUserWithEmailAndPassword(email, password);
-    await user.generateAuthToken();
-    // res.cookie("jwt", token, {
-    //   sameSite: "none",
-    //   expires: new Date(Date.now() + 5 * 60 * 1000),
-    //   httpOnly: true,
-    //   secure: true,
-    // });
+    const token = await user.generateAuthToken();
+    res.cookie("jwt", token, {
+      // sameSite: "none",
+      expires: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+      httpOnly: true,
+      // secure: true,
+    });
     res.status(200).json(user);
   } catch (error) {
     res.status(401).send(error.message);
@@ -44,7 +43,7 @@ const logout = async (req, res) => {
     req.user.tokens = req.user.tokens.filter((currToken) => {
       return currToken.token !== req.token;
     });
-    // res.clearCookie("jwt");
+    res.clearCookie("jwt");
     console.log("Logout Successfully");
     await req.user.save();
     res.status(200).send();
@@ -56,7 +55,7 @@ const logout = async (req, res) => {
 const logoutFromAll = async (req, res) => {
   try {
     req.user.tokens = [];
-    // res.clearCookie("jwt");
+    res.clearCookie("jwt");
     console.log("Logout Successfully");
     await req.user.save();
     res.status(200).send();

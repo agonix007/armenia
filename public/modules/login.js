@@ -33,11 +33,11 @@ const loginUser = async (event) => {
 
     if (response.ok) {
       const data = await response.json();
-      const token = data.tokens[data.tokens.length - 1].token;
+      // const token = data.tokens[data.tokens.length - 1].token;
       
       // Setting the userName, token in local storage
       localStorage.setItem("username", data.name);
-      localStorage.setItem("token", token);
+      // localStorage.setItem("token", token);
 
       // Showing toastr fo success login
       toastr.success("Login Successful");

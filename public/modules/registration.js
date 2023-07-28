@@ -66,7 +66,7 @@ const registerUser = async (event) => {
       toastr.success("Registration Successful", "Congratulations🎉");
       // Redirect to login page after a short delay
       setTimeout(() => {
-        window.location.href = "/pages/login/index.html";
+        window.location.href = "/login";
       }, 2000);
     } else {
       throw new Error("Email already taken");

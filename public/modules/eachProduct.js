@@ -69,7 +69,7 @@ const addToCart = async() => {
     const response = await fetch(`/api/cart`, {
       method: "POST",
       headers: {
-        Authorization: localStorage.getItem("token"),
+        // Authorization: localStorage.getItem("token"),
         "Content-Type": "application/json",
       },
       body: JSON.stringify(product),
@@ -130,7 +130,7 @@ const logoutUser = async () => {
     const response = await fetch(config.url + "/auth/logout", {
       method: "GET",
       headers: {
-        Authorization: localStorage.getItem("token"), // Replace with the stored token
+        // Authorization: localStorage.getItem("token"),
         "Content-Type": "application/json",
       },
     });
