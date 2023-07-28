@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="whole-box">
+        <div class="profile-container">
+            <img id="profilePicture" src="./images/avatar-1.svg" alt="Profile Picture" class="profile-picture" width="100px">
+            <h2>Apurba Dutta</h2>
+            <p><strong>Bio- </strong> <em>Admin</em></p>
+            <button> <a href="#">Logout from all devices</a></button>
+
+            <div class="avatar-options">
+                <div class="avatar-option selected" onclick="selectAvatar(this)">
+                    <img src="./images/avatar-1.svg" alt="Avatar 1" width="80px">
+                </div>
+                <div class="avatar-option" onclick="selectAvatar(this)">
+                    <img src="./images/avatar-2.svg" alt="Avatar 2" width="80px">
+                </div>
+                <div class="avatar-option" onclick="selectAvatar(this)">
+                    <img src="./images/avatar-3.svg" alt="Avatar 3" width="80px">
+                </div>
+            </div>
+            <div class="avatar-options">
+                <div class="avatar-option selected" onclick="selectAvatar(this)">
+                    <img src="./images/avatar-4.svg" alt="Avatar 1" width="80px">
+                </div>
+                <div class="avatar-option" onclick="selectAvatar(this)">
+                    <img src="./images/avatar-5.svg" alt="Avatar 2" width="80px">
+                </div>
+                <div class="avatar-option" onclick="selectAvatar(this)">
+                    <img src="./images/avatar-6.svg" alt="Avatar 3" width="80px">
+                </div>
+            </div>
+        </div>
+        <div class="profile-details">
+            <div class="details">
+                <div class="row">
+                    <p><strong>Name: </strong></p>
+                </div>
+                <div class="row">
+                    <p>&nbsp;Apurba Dutta</p>
+                </div>
+            </div>
+            <hr>
+            <div class="details">
+                <div class="row">
+                    <p><strong>Email: </strong></p>
+                </div>
+                <div class="row">
+                    <p>&nbsp;apurbadutta2099@gmail.com</p>
+                </div>
+            </div>
+            <hr>
+            <div class="details">
+                <div class="row">
+                    <p><strong>Address: </strong></p>
+                </div>
+                <div class="row">
+                    <p>&nbsp;Payradanga, nadia, kolakata</p>
+                </div>
+            </div>
+            <hr>
+            <div class="details">
+                <div class="row">
+                    <p><strong>City: </strong></p>
+                </div>
+                <div class="row">
+                    <p>&nbsp;kolkata</p>
+                </div>
+            </div>
+            <hr>
+            <div class="details">
+                <div class="row">
+                    <p><strong>State: </strong></p>
+                </div>
+                <div class="row">
+                    <p>&nbsp;West Bengal</p>
+                </div>
+            </div>
+            <hr>
+            <div class="details">
+                <div class="row">
+                    <p><strong>Zip code:</strong></p>
+                </div>
+                <div class="row">
+                    <p>&nbsp;741247</p>
+                </div>
+            </div>
+            <hr>
+            <div class="details">
+                <div class="row">
+                    <p><strong>Wallet money: </strong></p>
+                </div>
+                <div class="row">
+                    <p>&nbsp;&#8377;849</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectAvatar(avatarOption) {
+            const avatarOptions = document.querySelectorAll('.avatar-option');
+            avatarOptions.forEach(option => option.classList.remove('selected'));
+            avatarOption.classList.add('selected');
+
+            const selectedAvatar = avatarOption.querySelector('img').src;
+            document.getElementById('profilePicture').src = selectedAvatar;
+        }
+    </script>
+</body>
+
+</html>
