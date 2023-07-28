@@ -120,7 +120,6 @@ body{
     border: none;
     font-size: 1.2rem;
     letter-spacing: 2px;
-    width: 500px;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
