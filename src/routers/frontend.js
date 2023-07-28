@@ -21,8 +21,16 @@ router.get("/product", (req, res) => {
 router.get("/about", (req, res) => {
   res.render("aboutUs");
 });
-router.get("/account", (req, res) => {
-  res.render("account");
+router.get("/account", auth, (req, res) => {
+  res.render("account", {
+    name: req.user.name,
+    email: req.user.email,
+    address: req.user.address,
+    city: req.user.city,
+    state: req.user.state,
+    zip: req.user.zip,
+    walletMoney: req.user.walletMoney
+  });
 });
 router.get("/cart", auth, (req, res) => {
   res.render("cart");
