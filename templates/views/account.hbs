@@ -44,7 +44,7 @@
           />
           <h2 class="m-0 fw-bold">{{name}}</h2>
           <p class="m-0"><span class="fw-bold">Bio- </span> <em>Admin</em></p>
-          <button type="btn" class="btn fw-bold">
+          <button type="btn" class="btn fw-bold" id="logoutAll">
             Logout from all devices
           </button>
 
@@ -126,21 +126,22 @@
             </p>
           </div>
           <hr />
-          <button id="updateButton" class="fw-bold">Update</button>
+          <button id="updateButton" class="fw-bold updateButton me-2">Update</button>
+          <button type="button" class="fw-bold updateButton" id="openModalBtn">Add amount</button>
 
-          <!-- Modal starts-->
+          <!-- Address setting Modal starts-->
           <div id="myModal" class="modal">
             <div class="modal-content">
               <div class="head">
                 <span class="close">&times;</span>
                 <h3 class="fw-bold m-0">Update <span>Information</span></h3>
               </div>
-              <form action="#">
+              <form action="#" id="updateAddress">
                 <div class="dbox">
                   <label for="address">
                     <strong>Enter your address :</strong></label
                   >
-                  <input type="text" id="address" required />
+                  <input type="text" id="address" placeholder="{{address}}"/>
                 </div>
                 <hr />
                 <div class="dbox">
@@ -151,6 +152,7 @@
                     type="text"
                     id="city"
                     list="city-list"
+                    placeholder="{{city}}"
                     autocomplete="off"
                   />
                   <datalist id="city-list">
@@ -187,8 +189,8 @@
                     type="text"
                     id="state"
                     list="state-list"
+                    placeholder="{{state}}"
                     autocomplete="off"
-                    required
                   />
                   <datalist id="state-list">
                     <option value="Andhra Pradesh"></option>
@@ -232,14 +234,25 @@
                 <hr />
                 <div class="dbox">
                   <label for="zipCode"><strong>Zip code :</strong></label>
-                  <input type="number" id="zipCode" required />
+                  <input type="number" id="zipCode" placeholder="{{zip}}"/>
                 </div>
                 <hr />
                 <div class="Button mt-2">
-                  <button id="submitBtn" class="fw-bold">Save</button>
-                  <button id="cancelBtn" class="fw-bold">Cancel</button>
+                  <button type="submit" id="submitBtn" class="fw-bold">Save 
+                  </button>
+                  <button type="reset" class="fw-bold cancelBtn">Clear</button>
+                  <button id="cancelBtn" class="fw-bold cancelBtn">Cancel</button>
                 </div>
               </form>
+            </div>
+          </div>
+          <!-- WalletMoney Modal starts-->
+          <div class="wallet-modal" id="walletModal">
+            <div class="wallet-modal-content">
+              <input type="number" class="form-control" id="addMoney" placeholder="Add amount &#8377;" name="money"
+                required />
+              <button type="button" class="btn fw-bold" id="addMoneyBtn">Add money</button>
+              <button type="button" class="btn fw-bold" id="cancelModal">Cancel</button>
             </div>
           </div>
         </div>

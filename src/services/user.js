@@ -22,18 +22,28 @@ const createUser = async (userBody) => {
 const getUserAddressById = async (userId) => {
   const user = await User.findOne(
     { _id: userId },
-    { email: 1, address: 1, city: 1, state: 1, zip: 1 }
+    { email: 1, address: 1, city: 1, state: 1, zip: 1, walletMoney:1 }
   );
   return user;
 };
 
 const setAddress = async (user, address, city, state, zip, walletMoney) => {
-  user.address = address;
-  user.city = city;
-  user.state = state;
-  user.zip = zip;
-  user.walletMoney = walletMoney;
-
+  if (address !== "" && address !== undefined) {
+    user.address = address;
+  }
+  if (city !== "" && city !== undefined) {
+    user.city = city;
+  }
+  if (state !== "" && state !== undefined) {
+    user.state = state;
+  }
+  if (zip !== "" && zip !== undefined) {
+    user.zip = zip;
+  }
+  if (walletMoney !== "" && walletMoney !== undefined) {
+    const wMoney = Number(walletMoney)
+    user.walletMoney += wMoney;
+  }
   await user.save();
 };
 
