@@ -36,19 +36,18 @@ body{
     margin: 10px 20%;
     font-size: 1.2rem;
     padding: 10px 8px;
-    background-color: #23bd5e;
-    color: white;
+    background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
+    box-shadow: rgba(65, 65, 95, 0.30) 0px 15px 30px -6px, rgba(0, 0, 0, 0.5) 0px 10px 18px -10px;
     font-weight: 500;
     border: none;
     border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    right: 6px;
 }
 .profile-container button a{
     text-decoration: none;
-    color: #ffffff;
-}
-.profile-container button:hover{
-  background-color:#05835d;
-  color: black;
+    color: #eeeeee;
 }
  img{
     margin: auto;
@@ -101,11 +100,11 @@ body{
 }
 .adminpanel h3{
     text-align: center;
-    color: #05835d;
+    color:#23bd5e;
     font-size: 1.5rem;
 }
 .adminpanel span{
-    color: #23bd5e;
+    color: #05835d;
 }
 .add-data{
     padding: 12px;
@@ -134,26 +133,31 @@ input::-webkit-inner-spin-button {
 }
 .btn input{
     font-size: 1.1rem;
-    background-color: #23bd5e;
+    /* background-color: #23bd5e; */
+    background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    font-weight: 700;
     color:#ffffff;
     border: none;
     padding: 8px 14px;
     margin: 12px;
     border-radius: 10px;
+    cursor: pointer;
 }
 .btn input:hover{
-    background-color:#05835d;
-    color: #ffffff;
+    background:#ffffff; 
+    color: #05835d;
+    border: 0.5px solid #0a999e;
 }
 
 .heading h3{
     position: relative;
     top: 40px;
     text-align: center;
-    color: #05835d;
+    color:  #23bd5e;
     font-size: 2rem;
 }
 .heading span{
-    color: #23bd5e;
+    color: #05835d;
     font-size: 2rem;
 }
