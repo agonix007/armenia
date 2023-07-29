@@ -19,6 +19,7 @@
             <h2>Apurba Dutta</h2>
             <p><strong>Bio- </strong> <em>Admin</em></p>
             <button> <a href="#">Logout from all devices</a></button>
+
             <div class="avatar-options">
                 <div class="avatar-option selected" onclick="selectAvatar(this)">
                     <img src="./images/avatar-1.svg" alt="Avatar 1" width="80px">
@@ -105,6 +106,101 @@
                     <p>&nbsp;&#8377;849</p>
                 </div>
             </div>
+            <hr>
+            <button id="updateButton">Update</button>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Update <span>Information</span></h2>
+                    <form action="#">
+                        <div class="dbox">
+                            <label for="address"> <strong>Enter your address :</strong></label>
+                            <input type="text" id="address" required>
+                        </div>
+                        <hr>
+                        <div class="dbox">
+                            <label for="city-input"> <strong>Enter your city :</strong></label>
+                            <input type="text" id="city-input" list="city-list" autocomplete="off">
+                            <datalist id="city-list">
+                                <option value="Mumbai">
+                                <option value="Delhi">
+                                <option value="Kolkata">
+                                <option value="Chennai">
+                                <option value="Bengaluru">
+                                <option value="Hyderabad">
+                                <option value="Ahmedabad">
+                                <option value="Pune">
+                                <option value="Jaipur">
+                                <option value="Lucknow">
+                                <option value="Kochi">
+                                <option value="Guwahati">
+                                <option value="Patna">
+                                <option value="Bhopal">
+                                <option value="Indore">
+                                <option value="Chandigarh">
+                                <option value="Visakhapatnam">
+                                <option value="Kanpur">
+                                <option value="Agra">
+                                <option value="Varanasi">
+                                <option value="Thiruvananthapuram">
+                                <option value="Nagpur">
+                            </datalist>
+                        </div>
+                        <hr>
+                        <div class="dbox">
+                            <label for="state-input"><strong>Enter your state :</strong></label>
+                            <input type="text" id="state-input" list="state-list" autocomplete="off" required>
+                            <datalist id="state-list">
+                                <option value="Andhra Pradesh">
+                                <option value="Arunachal Pradesh">
+                                <option value="Assam">
+                                <option value="Bihar">
+                                <option value="Chhattisgarh">
+                                <option value="Goa">
+                                <option value="Gujarat">
+                                <option value="Haryana">
+                                <option value="Himachal Pradesh">
+                                <option value="Jharkhand">
+                                <option value="Karnataka">
+                                <option value="Kerala">
+                                <option value="Madhya Pradesh">
+                                <option value="Maharashtra">
+                                <option value="Manipur">
+                                <option value="Meghalaya">
+                                <option value="Mizoram">
+                                <option value="Nagaland">
+                                <option value="Odisha">
+                                <option value="Punjab">
+                                <option value="Rajasthan">
+                                <option value="Sikkim">
+                                <option value="Tamil Nadu">
+                                <option value="Telangana">
+                                <option value="Tripura">
+                                <option value="Uttar Pradesh">
+                                <option value="Uttarakhand">
+                                <option value="West Bengal">
+                                <option value="Andaman and Nicobar Islands">
+                                <option value="Chandigarh">
+                                <option value="Dadra and Nagar Haveli and Daman and Diu">
+                                <option value="Lakshadweep">
+                                <option value="Delhi">
+                                <option value="Puducherry">
+                            </datalist>
+                        </div>
+                        <hr>
+                        <div class="dbox">
+                            <label for="zipCode"><strong>Zip code :</strong></label>
+                            <input type="number" id="zipCode" required>
+                        </div>
+                        <hr>
+                        <div class="Button">
+                            <button id="submitBtn">Save</button>
+                            <button id="cancelBtn">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
 
         <div class="adminpanel">
@@ -182,17 +278,7 @@
                 </form>
             </div>
         </div>
-
-        <script>
-            function selectAvatar(avatarOption) {
-                const avatarOptions = document.querySelectorAll('.avatar-option');
-                avatarOptions.forEach(option => option.classList.remove('selected'));
-                avatarOption.classList.add('selected');
-
-                const selectedAvatar = avatarOption.querySelector('img').src;
-                document.getElementById('profilePicture').src = selectedAvatar;
-            }
-        </script>
+        <script src="./app.js"></script>
 </body>
 
 </html>
