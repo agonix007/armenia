@@ -58,7 +58,6 @@ const userSchema = new mongoose.Schema(
     },
     walletMoney: {
       type: Number,
-      required: true,
       default: config.default_wallet_money,
     },
     tokens: [

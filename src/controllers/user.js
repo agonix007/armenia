@@ -40,7 +40,8 @@ const setFullAddress = async (req, res) => {
       req.body.address,
       req.body.city,
       req.body.state,
-      req.body.zip
+      req.body.zip,
+      req.body.walletMoney
     );
 
     res.status(200).json(user);

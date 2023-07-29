@@ -27,11 +27,12 @@ const getUserAddressById = async (userId) => {
   return user;
 };
 
-const setAddress = async (user, address, city, state, zip) => {
+const setAddress = async (user, address, city, state, zip, walletMoney) => {
   user.address = address;
   user.city = city;
   user.state = state;
   user.zip = zip;
+  user.walletMoney = walletMoney;
 
   await user.save();
 };
