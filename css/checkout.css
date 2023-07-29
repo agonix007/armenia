@@ -254,3 +254,45 @@ tfoot {
 .copyright a {
   color: var(--green);
 }
+
+/* modal */
+
+/* Add your custom styles here */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 26px;
+  border-radius: 5px;
+  width: 350px;
+}
+
+.modal-content button{
+  cursor: pointer;
+  background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin-top: 5px;
+  width: 100%;
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+.modal-content button:hover {
+  background: white;
+  color: #04b194;
+  border: 1px solid #04b194;
+}
+
+
