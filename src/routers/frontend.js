@@ -1,7 +1,7 @@
 const express = require("express");
 const router = new express.Router();
 
-const auth = require("../middlewares/auth");
+const authRedirect = require("../middlewares/redirect");
 
 router.get("/", (req, res) => {
   res.render("index");
@@ -21,7 +21,7 @@ router.get("/product", (req, res) => {
 router.get("/about", (req, res) => {
   res.render("aboutUs");
 });
-router.get("/account", auth, (req, res) => {
+router.get("/account", authRedirect, (req, res) => {
   res.render("account", {
     name: req.user.name,
     email: req.user.email,
@@ -29,16 +29,16 @@ router.get("/account", auth, (req, res) => {
     city: req.user.city,
     state: req.user.state,
     zip: req.user.zip,
-    walletMoney: req.user.walletMoney
+    walletMoney: req.user.walletMoney,
   });
 });
-router.get("/cart", auth, (req, res) => {
+router.get("/cart", authRedirect, (req, res) => {
   res.render("cart");
 });
-router.get("/checkout", auth, (req, res) => {
+router.get("/checkout", authRedirect, (req, res) => {
   res.render("checkout");
 });
-router.get("/successful", auth, (req, res) => {
+router.get("/successful", authRedirect, (req, res) => {
   res.render("successful");
 });
 router.get("*", (req, res) => {

@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 
-const auth = async (req, res, next) => {
+const authRedirect = async (req, res, next) => {
   try {
     // const token = req.headers.authorization;
     const token = req.cookies.jwt;
@@ -14,8 +14,8 @@ const auth = async (req, res, next) => {
     next();
   } catch (error) {
     console.log(error.message);
-    res.status(401).send("UNAUTHORIZED | Please Authenticate");
+    res.redirect("/login");
   }
 };
 
-module.exports = auth;
+module.exports = authRedirect;
