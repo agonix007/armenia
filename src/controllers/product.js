@@ -8,7 +8,7 @@ const getProducts = async (req,res) => {
     }
     res.status(200).json(products);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).json(error.message);
   }
 };
 
@@ -21,8 +21,18 @@ const getProductsById = async (req,res) => {
     }
     res.status(200).json(product);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).json(error.message);
   }
 };
 
-module.exports = { getProducts, getProductsById };
+const addProducts = async (req,res) => {
+  try {
+    const newProduct = await new Product(req.body)
+    const product = await newProduct.save();
+    res.status(201).json(product);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+}
+
+module.exports = { getProducts, getProductsById, addProducts };
