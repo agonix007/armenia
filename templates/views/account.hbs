@@ -37,19 +37,19 @@
         <div class="profile-container">
           <img
             id="profilePicture"
-            src="../../images/account/avatar-1.svg"
+            src={{pic}}
             alt="Profile Picture"
             class="profile-picture mb-2"
             width="100px"
           />
           <h2 class="m-0 fw-bold">{{name}}</h2>
-          <p class="m-0"><span class="fw-bold">Bio- </span> <em>Admin</em></p>
+          <p class="m-0"><span class="fw-bold">Bio- </span> <em>{{bio}}</em></p>
           <button type="btn" class="btn fw-bold" id="logoutAll">
             Logout from all devices
           </button>
 
           <div class="avatar-options mt-2">
-            <div class="avatar-option selected" onclick="selectAvatar(this)">
+            <div class="avatar-option" onclick="selectAvatar(this)">
               <img
                 src="../../images/account/avatar-1.svg"
                 alt="Avatar 1"
@@ -241,7 +241,7 @@
                   <button type="submit" id="submitBtn" class="fw-bold">Save 
                   </button>
                   <button type="reset" class="fw-bold cancelBtn">Clear</button>
-                  <button id="cancelBtn" class="fw-bold cancelBtn">Cancel</button>
+                  <button type="button" id="cancel-Btn" class="fw-bold cancelBtn">Cancel</button>
                 </div>
               </form>
             </div>
@@ -398,13 +398,31 @@
     <!-- footer ends -->
 
     <script>
-      function selectAvatar(avatarOption) {
-        const avatarOptions = document.querySelectorAll(".avatar-option");
-        avatarOptions.forEach((option) => option.classList.remove("selected"));
-        avatarOption.classList.add("selected");
-
+      async function selectAvatar(avatarOption) {
         const selectedAvatar = avatarOption.querySelector("img").src;
-        document.getElementById("profilePicture").src = selectedAvatar;
+        
+        const profilePic = {
+          pic: selectedAvatar
+        }
+
+        try{
+          const response = await fetch("/api/account", {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(profilePic),
+          });
+          if (!response.ok) {
+            const errorMsg = await response.json();
+            toastr.error(errorMsg);
+            return;
+          }
+          location.reload();
+        }catch(error){
+          console.error(error.message);
+          toastr.error(error.message);
+        }
       }
     </script>
     <script type="module" src="../../modules/account.js"></script>

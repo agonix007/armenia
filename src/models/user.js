@@ -56,6 +56,16 @@ const userSchema = new mongoose.Schema(
       trim: true,
       default: config.default_zip,
     },
+    bio: {
+      type: String,
+      trim: true,
+      default: config.default_bio,
+    },
+    pic: {
+      type: String,
+      trim: true,
+      default: config.default_profile_pic,
+    },
     walletMoney: {
       type: Number,
       default: config.default_wallet_money,

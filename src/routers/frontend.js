@@ -30,6 +30,8 @@ router.get("/account", authRedirect, (req, res) => {
     state: req.user.state,
     zip: req.user.zip,
     walletMoney: req.user.walletMoney,
+    bio: req.user.bio,
+    pic: req.user.pic,
   });
 });
 router.get("/cart", authRedirect, (req, res) => {

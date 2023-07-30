@@ -22,12 +22,12 @@ const createUser = async (userBody) => {
 const getUserAddressById = async (userId) => {
   const user = await User.findOne(
     { _id: userId },
-    { email: 1, address: 1, city: 1, state: 1, zip: 1, walletMoney:1 }
+    { email: 1, address: 1, city: 1, state: 1, zip: 1, walletMoney:1, pic:1 }
   );
   return user;
 };
 
-const setAddress = async (user, address, city, state, zip, walletMoney) => {
+const setAddress = async (user, address, city, state, zip, walletMoney, pic) => {
   if (address !== "" && address !== undefined) {
     user.address = address;
   }
@@ -43,6 +43,9 @@ const setAddress = async (user, address, city, state, zip, walletMoney) => {
   if (walletMoney !== "" && walletMoney !== undefined) {
     const wMoney = Number(walletMoney)
     user.walletMoney += wMoney;
+  }
+  if (pic !== "" && pic !== undefined) {
+    user.pic = pic;
   }
   await user.save();
 };

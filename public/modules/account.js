@@ -24,7 +24,7 @@ function closeModal() {
 }
 span.onclick = closeModal;
 
-const cancelBtn = document.getElementById("cancelBtn");
+const cancelBtn = document.getElementById("cancel-Btn");
 cancelBtn.onclick = closeModal;
 // Handle form submission
 const updateData = async (event) => {
@@ -71,23 +71,20 @@ const updateData = async (event) => {
 const updateAddress = document.getElementById("updateAddress");
 updateAddress.addEventListener("submit", updateData);
 
+
+
 // walletMoney Setting Modal
 const walletModal = document.getElementById("walletModal");
-
 // Get the button that opens the modal
 const openModalBtn = document.getElementById("openModalBtn");
-
 // Get the button that adds money
 const addMoneyBtn = document.getElementById("addMoneyBtn");
-
 // Get the button that cancels the modal
 const cancelModal = document.getElementById("cancelModal");
-
 // When the "Add amount" button is clicked, open the modal
 openModalBtn.addEventListener("click", function () {
   walletModal.style.display = "block";
 });
-
 // When the "ADD Money" button is clicked, add the money and close the modal
 addMoneyBtn.addEventListener("click", async function () {
   const addMoney = document.getElementById("addMoney").value;
