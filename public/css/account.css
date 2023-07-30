@@ -234,6 +234,26 @@ hr {
   padding: 14px;
 }
 
+/* Admin Panel */
+.dbox {
+  margin: 10px;
+  font-size: 1.2rem;
+}
+.dbox input {
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dbox input[type="number"] {
+  appearance: textfield;
+}
+
 .heading h3 {
   text-align: center;
   color: #23bd5e;
