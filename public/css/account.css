@@ -168,7 +168,6 @@ li {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 30px;
 }
 hr {
   margin: 0;
@@ -233,65 +232,6 @@ hr {
 .details {
   font-size: 1.3rem;
   padding: 14px;
-}
-
-/* Admin Panel */
-.adminpanel {
-  width: 950px;
-  height: auto;
-  border: 1px solid lightgray;
-  background-color: #ffffff;
-  padding: 18px;
-  border-radius: 16px;
-  /* display: none; */
-}
-.adminpanel h3 {
-  text-align: center;
-  color: #23bd5e;
-  font-size: 1.5rem;
-}
-.adminpanel span {
-  color: #05835d;
-}
-.add-data {
-  padding: 12px;
-}
-.dbox {
-  margin: 10px;
-  font-size: 1.2rem;
-}
-.dbox input {
-  outline: none;
-  border: none;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
-}
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.dbox input[type="number"] {
-  appearance: textfield;
-}
-
-.buttons .btn {
-  font-size: 0.9rem;
-  padding: 8px 12px;
-  margin-top: 18px;
-  margin-right: 12px;
-  background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  border: 1px solid #04b194;
-  color: white;
-  transition: 0.4s ease-in-out;
-  border-radius: 10px;
-}
-.buttons .btn:hover {
-  border: 1px solid #04b194;
-  background: white;
-  color: #04b194;
 }
 
 .heading h3 {

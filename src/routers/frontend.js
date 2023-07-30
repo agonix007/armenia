@@ -34,6 +34,9 @@ router.get("/account", authRedirect, (req, res) => {
     pic: req.user.pic,
   });
 });
+router.get("/admin", authRedirect, (req, res) => {
+  res.render("admin");
+});
 router.get("/cart", authRedirect, (req, res) => {
   res.render("cart");
 });
