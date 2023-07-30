@@ -168,6 +168,17 @@ if (isLoggedIn) {
   cart.style.display = "none";
 }
 
+// admin panel rendering in header
+const adminPanel = async () => {
+  const adminPanelLink = document.getElementById("adminPanelLink");
+  const response = await fetch("/api/account");
+  const data = await response.json();
+  if(data.bio === "Admin"){
+    adminPanelLink.style.display = "block";
+  }
+};
+adminPanel();
+
 const logoutUser = async () => {
   try {
     const response = await fetch(config.url + "/auth/logout", {
