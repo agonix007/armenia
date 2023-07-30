@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 
 const authRedirect = require("../middlewares/redirect");
+const adminAuth  = require("../middlewares/adminAuth");
 
 router.get("/", (req, res) => {
   res.render("index");
@@ -34,9 +35,6 @@ router.get("/account", authRedirect, (req, res) => {
     pic: req.user.pic,
   });
 });
-router.get("/admin", authRedirect, (req, res) => {
-  res.render("admin");
-});
 router.get("/cart", authRedirect, (req, res) => {
   res.render("cart");
 });
@@ -45,6 +43,9 @@ router.get("/checkout", authRedirect, (req, res) => {
 });
 router.get("/successful", authRedirect, (req, res) => {
   res.render("successful");
+});
+router.get("/admin", adminAuth, (req, res) => {
+  res.render("admin");
 });
 router.get("*", (req, res) => {
   res.status(404).render("error");
