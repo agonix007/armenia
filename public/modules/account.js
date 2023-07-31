@@ -88,6 +88,10 @@ openModalBtn.addEventListener("click", function () {
 // When the "ADD Money" button is clicked, add the money and close the modal
 addMoneyBtn.addEventListener("click", async function () {
   const addMoney = document.getElementById("addMoney").value;
+  if(addMoney === "" || addMoney === undefined){
+    walletModal.style.display = "none";
+    return
+  }
 
   const money = {
     walletMoney: addMoney
@@ -101,8 +105,6 @@ addMoneyBtn.addEventListener("click", async function () {
       },
       body: JSON.stringify(money),
     });
-    const data = await response.json();
-    console.log(data)
     if (!response.ok) {
       const errorMsg = await response.json();
       toastr.error(errorMsg);

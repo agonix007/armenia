@@ -39,7 +39,15 @@ router.get("/cart", authRedirect, (req, res) => {
   res.render("cart");
 });
 router.get("/checkout", authRedirect, (req, res) => {
-  res.render("checkout");
+  res.render("checkout", {
+    name: req.user.name,
+    email: req.user.email,
+    address: req.user.address,
+    city: req.user.city,
+    state: req.user.state,
+    zip: req.user.zip,
+    walletMoney: req.user.walletMoney,
+  });
 });
 router.get("/successful", authRedirect, (req, res) => {
   res.render("successful");

@@ -55,7 +55,6 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 115vh;
 }
 .checkout form {
   padding: 35px;
@@ -130,9 +129,6 @@ input[type="number"]:focus {
   border-color: #0ecc80;
   box-shadow: 0 0 0 0.25rem rgba(16, 235, 191, 0.25);
 }
-/* .addMoney{
-    max-width: 100px;
-} */
 .form-select {
   background-color: white; /* Background color when focused */
   padding: 8px 15px;
@@ -217,6 +213,50 @@ tfoot {
 }
 .saved {
   padding-left: 10px;
+}
+
+/*Add Money Modal */
+.wallet-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.wallet-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 26px;
+  border-radius: 16px;
+  width: 350px;
+}
+
+.wallet-modal-content .form-control{
+  width: 100%;
+}
+
+.wallet-modal-content button{
+  width: 100%;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border: 1px solid #04b194;
+  color: white;
+  transition: 0.4s ease-in-out;
+  border-radius: 10px;
+}
+.wallet-modal-content button:hover {
+  background: #ffffff;
+  color: #05835d;
+  border: 1px solid #0a999e;
 }
 
 /* footer */

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,6 +15,10 @@
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
     />
     <link rel="stylesheet" href="../../css/checkout.css" />
   </head>
@@ -52,115 +55,126 @@
     <!-- Navbar ends -->
 
     <!-- Main Section starts -->
-    <div class="checkout">
+    <div class="checkout my-5">
       <form action="">
         <div class="row">
           <div class="col col1">
             <h3 class="title">billing <span class="second">address</span></h3>
             <div class="inputBox">
-              <label for="exampleInputName1" class="form-label fw-bold"
-                >Full Name<span class="star">*</span></label
-              >
+              <label for="exampleInputName1" class="form-label fw-bold">Full
+                Name<span class="star">*</span></label>
               <input
                 type="text"
                 class="form-control"
-                id="exampleInputName1"
+                id="name"
                 placeholder="John Doe"
                 name="name"
+                value="{{name}}"
+                disabled
                 required
               />
             </div>
             <div class="inputBox">
-              <label for="exampleInputEmail1" class="form-label fw-bold"
-                >Email<span class="star">*</span></label
-              >
+              <label for="email" class="form-label fw-bold">Email<span
+                  class="star"
+                >*</span></label>
               <input
                 type="email"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="email"
                 aria-describedby="emailHelp"
                 name="email"
                 placeholder="example123@email.com"
+                value="{{email}}"
+                disabled
                 required
               />
             </div>
             <div class="inputBox">
-              <label for="exampleInputAddress1" class="form-label fw-bold"
-                >Address<span class="star">*</span></label
-              >
+              <label for="address" class="form-label fw-bold">Address<span
+                  class="star"
+                >*</span></label>
               <input
                 type="text"
                 class="form-control"
-                id="exampleInputAddress1"
+                id="address"
                 placeholder="house no.- street - locality"
                 name="address"
+                value="{{address}}"
                 required
               />
             </div>
             <div class="inputBox">
-              <label for="exampleInputCity1" class="form-label fw-bold"
-                >City<span class="star">*</span></label
-              >
+              <label for="city" class="form-label fw-bold">City<span
+                  class="star"
+                >*</span></label>
               <input
                 type="text"
                 class="form-control"
-                id="exampleInputCity1"
+                id="city"
                 placeholder="Kolkata"
                 name="city"
+                value="{{city}}"
                 required
               />
             </div>
             <div class="flex">
               <div class="inputBox">
-                <label for="exampleInputState1" class="form-label fw-bold"
-                  >State<span class="star">*</span></label
-                >
-                <select
-                  class="form-select"
-                  aria-label="Default select example"
+                <label for="state" class="form-label fw-bold">State<span
+                    class="star"
+                  >*</span></label>
+                <input
+                  type="text"
+                  id="state"
+                  class="form-control"
+                  list="state-list"
                   name="state"
-                >
-                  <option selected>Select State</option>
-                  <option value="Andhra Pradesh">Andhra Pradesh</option>
-                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-                  <option value="Assam">Assam</option>
-                  <option value="Bihar">Bihar</option>
-                  <option value="Chhattisgarh">Chhattisgarh</option>
-                  <option value="Goa">Goa</option>
-                  <option value="Gujarat">Gujarat</option>
-                  <option value="Haryana">Haryana</option>
-                  <option value="Himachal Pradesh">Himachal Pradesh</option>
-                  <option value="Jharkhand">Jharkhand</option>
-                  <option value="Karnataka">Karnataka</option>
-                  <option value="Kerala">Kerala</option>
-                  <option value="Madhya Pradesh">Madhya Pradesh</option>
-                  <option value="Maharashtra">Maharashtra</option>
-                  <option value="Manipur">Manipur</option>
-                  <option value="Meghalaya">Meghalaya</option>
-                  <option value="Mizoram">Mizoram</option>
-                  <option value="Nagaland">Nagaland</option>
-                  <option value="Odisha">Odisha</option>
-                  <option value="Punjab">Punjab</option>
-                  <option value="Rajasthan">Rajasthan</option>
-                  <option value="Sikkim">Sikkim</option>
-                  <option value="Tamil Nadu">Tamil Nadu</option>
-                  <option value="Telangana">Telangana</option>
-                  <option value="Tripura">Tripura</option>
-                  <option value="Uttar Pradesh">Uttar Pradesh</option>
-                  <option value="Uttarakhand">Uttarakhand</option>
-                  <option value="West Bengal">West Bengal</option>
-                </select>
+                  placeholder="West Bengal"
+                  value="{{state}}"
+                  required
+                />
+                <datalist id="state-list">
+                  <option value="Andhra Pradesh"></option>
+                  <option value="Arunachal Pradesh"></option>
+                  <option value="Assam"></option>
+                  <option value="Bihar"></option>
+                  <option value="Chhattisgarh"></option>
+                  <option value="Goa"></option>
+                  <option value="Gujarat"></option>
+                  <option value="Haryana"></option>
+                  <option value="Himachal Pradesh"></option>
+                  <option value="Jharkhand"></option>
+                  <option value="Karnataka"></option>
+                  <option value="Kerala"></option>
+                  <option value="Madhya Pradesh"></option>
+                  <option value="Maharashtra"></option>
+                  <option value="Manipur"></option>
+                  <option value="Meghalaya"></option>
+                  <option value="Mizoram"></option>
+                  <option value="Nagaland"></option>
+                  <option value="Odisha"></option>
+                  <option value="Punjab"></option>
+                  <option value="Rajasthan"></option>
+                  <option value="Sikkim"></option>
+                  <option value="Tamil Nadu"></option>
+                  <option value="Telangana"></option>
+                  <option value="Tripura"></option>
+                  <option value="Uttar Pradesh"></option>
+                  <option value="Uttarakhand"></option>
+                  <option value="West Bengal"></option>
+                </datalist>
               </div>
               <div class="inputBox">
-                <label for="exampleInputZip1" class="form-label fw-bold"
-                  >Pin code<span class="star">*</span></label
-                >
+                <label for="zip" class="form-label fw-bold">Pin code<span
+                    class="star"
+                  >*</span></label>
                 <input
                   type="number"
                   class="form-control"
-                  id="exampleInputZip1"
+                  id="zip"
                   placeholder="123 456"
                   name="zip"
+                  value="{{zip}}"
                   required
                 />
               </div>
@@ -174,16 +188,33 @@
               <div class="amt d-flex justify-content-between my-2">
                 <div class="d-flex">
                   <img src="../../images/checkout/wallet.png" alt="wallet" />
-                  <p>&#x20B9;1249</p>
+                  <p>&#x20B9;{{walletMoney}}</p>
                 </div>
-                <input
-                  type="number"
-                  class="form-control addMoney"
-                  placeholder="Add money"
-                  name="money"
-                />
-                <button type="button" class="btn fw-bold">Add amount</button>
+                <button type="button" class="btn fw-bold" id="openModalBtn">Add
+                  amount</button>
               </div>
+
+              <!--Wallet  Modal -->
+              <div class="wallet-modal" id="walletModal">
+                <div class="wallet-modal-content">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="addMoney"
+                    placeholder="Add amount &#8377;"
+                    name="money"
+                    required
+                  />
+                  <button type="button" class="btn fw-bold" id="addMoneyBtn">Add
+                    money</button>
+                  <button
+                    type="button"
+                    class="btn fw-bold"
+                    id="cancelModal"
+                  >Cancel</button>
+                </div>
+              </div>
+
             </div>
             <div class="oder-summary">
               <h3 class="title">Order <span class="second">Summary</span></h3>
@@ -226,6 +257,9 @@
     </div>
     <!-- Main Section ends -->
 
+    <script type="module" src="../../modules/checkout.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
