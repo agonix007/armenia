@@ -7,8 +7,46 @@ toastr.options = {
   timeOut: 3000,
 };
 
+const addingOrder = (items) => {
+  const orderedItems = document.getElementById("orderedItems");
+  items.forEach((product) => {
+    const indianTime = new Date(product.orderedAt).toLocaleDateString("en-IN");
+    product.orderedItems.cartItems.forEach((item) => {
+      orderedItems.innerHTML += `
+      <div class="product-section">
+          <div class="product-image">
+            <img src="${item.product.imageUrl}" alt="Product 1" />
+          </div>
+          <div class="product-details">
+            <h2 class="product-name">${item.product.pname}</h2>
+            <p class="product-description">
+              <p>${item.product.description}</p><strong>Order date:</strong>
+              ${indianTime}</p>
+            <button type="button" class="btn btn-grad fw-bold">View</button>
+          </div>
+          </div>  
+      `;
+    })
+  });
+};
 
+const getOrderedItems = async () => {
+  try {
+    const response = await fetch("/api/cart/orders");
+    if (!response.ok) {
+      const errorMsg = await response.json();
+      toastr.error(errorMsg);
+      return;
+    }
+    const data = await response.json();
+    addingOrder(data.userCart.reverse());
+  } catch (error) {
+    console.log(error.message);
+    toastr.error(error.message);
+  }
+};
 
+getOrderedItems();
 
 const account = document.getElementById("account");
 const cart = document.getElementById("cartFeature");
