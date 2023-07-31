@@ -34,10 +34,19 @@ const loginUser = async (event) => {
     if (response.ok) {
       const data = await response.json();
       // const token = data.tokens[data.tokens.length - 1].token;
-      
+
       // Setting the userName, token in local storage
       localStorage.setItem("username", data.name);
       // localStorage.setItem("token", token);
+
+      if (localStorage.getItem("username") === data.name) {
+        toastr.info("You have already Logged in");
+        toastr.success("Redirecting to home page");
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 1500);
+        return;
+      }
 
       // Showing toastr fo success login
       toastr.success("Login Successful");
