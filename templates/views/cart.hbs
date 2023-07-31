@@ -34,6 +34,9 @@
         class="cart-page d-flex flex-column align-items-center"
       >
        <p class="m-0 fw-bold" id="sorry">Oops, your cart feels a bit lonely!&#128542; Fill it up with products and let the shopping journey begin!</p>
+       <div class="subTotal">
+        <p class="fw-bold text-black">SubTotal (<span id="totalItems">0</span>&nbsp;items):&nbsp;<span id="totalSummary">₹0.00</span></p>
+       </div>
        <div id="cart-items">
         <table>
           <thead>
@@ -47,12 +50,6 @@
             {{!-- Fetching from js --}}
           </tbody>
         </table>
-        <div class="w-100 d-flex justify-content-end">
-          <div class="d-flex justify-content-between box2 py-2">
-            <span class="fw-bold total">Total:</span>
-            <span id="totalSummary">₹0.00</span>
-          </div>
-        </div>
       <button
             type="btn"
             class="btn btn-grad fw-bold text-white w-100 mt-4"

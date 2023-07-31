@@ -11,6 +11,7 @@ const addingAndRemovingCartItems = (items) => {
   const cartProducts = document.getElementById("cartItems");
   items.forEach((detail, i) => {
     const uniqueId = `product-${i}`;
+    const total = detail.product.price * detail.quantity;
     cartProducts.innerHTML += `<tr id="${uniqueId}">
               <td>
                 <div class="cart-info">
@@ -34,9 +35,7 @@ const addingAndRemovingCartItems = (items) => {
                   value="${detail.quantity}"
                 />
               </td>
-              <td id="tprice-${uniqueId}" class="item-total-price">₹${
-      detail.product.price * detail.quantity
-    }</td>
+              <td id="tprice-${uniqueId}" class="item-total-price">₹${total.toLocaleString("en-IN")}</td>
             </tr>`;
   });
 
@@ -53,7 +52,7 @@ const addingAndRemovingCartItems = (items) => {
       const totalPrice = inputValue * itemPrice;
 
       const tprice = document.getElementById(`tprice-${uniqueId}`);
-      tprice.textContent = `₹${totalPrice}`;
+      tprice.textContent = `₹${totalPrice.toLocaleString("en-IN")}`;
 
       try {
         const response = await fetch("/api/cart", {
@@ -76,11 +75,12 @@ const addingAndRemovingCartItems = (items) => {
         const allTPrices = document.querySelectorAll(".item-total-price");
         let totalSummary = 0;
         allTPrices.forEach((tpriceElement) => {
-          const priceValue = +tpriceElement.textContent.replace("₹", "");
+          const priceValue = +tpriceElement.textContent.replace(/₹|,/g, "");
+          console.log(priceValue);
           totalSummary += priceValue;
         });
         const totalSummaryElement = document.getElementById("totalSummary");
-        totalSummaryElement.textContent = `₹${totalSummary}`;
+        totalSummaryElement.textContent = `₹${totalSummary.toLocaleString("en-IN")}`;
       } catch (error) {
         console.log(error.message);
         toastr.error(error.message);
@@ -92,11 +92,11 @@ const addingAndRemovingCartItems = (items) => {
   const allTPrices = document.querySelectorAll(".item-total-price");
   let totalSummary = 0;
   allTPrices.forEach((tpriceElement) => {
-    const priceValue = +tpriceElement.textContent.replace("₹", "");
+    const priceValue = +tpriceElement.textContent.replace(/₹|,/g, "");
     totalSummary += priceValue;
   });
   const totalSummaryElement = document.getElementById("totalSummary");
-  totalSummaryElement.textContent = `₹${totalSummary}`;
+  totalSummaryElement.textContent = `₹${totalSummary.toLocaleString("en-IN")}`;
 
   // Removing products from cart
   const removeProducts = document.querySelectorAll(".remove-product");
@@ -150,6 +150,8 @@ const getCartItems = async () => {
     cartItems.style.display = "block";
     const data = await response.json();
     addingAndRemovingCartItems(data.cartItems);
+    const totalItems = document.getElementById("totalItems");
+    totalItems.innerText = `${data.cartItems.length}`;
     // updateCartIndicator(data.cartItems.length);
   } catch (error) {
     console.log(error.message);
@@ -164,7 +166,7 @@ checkoutBtn.addEventListener("click", () => checkout());
 
 const checkout = () => {
   window.location.href = "/checkout";
-}
+};
 
 // const updateCartIndicator = (count) => {
 //   const cartIndicator = document.getElementById("cartIndicator");
@@ -197,7 +199,7 @@ const adminPanel = async () => {
   const adminPanelLink = document.getElementById("adminPanelLink");
   const response = await fetch("/api/account");
   const data = await response.json();
-  if(data.bio === "Admin"){
+  if (data.bio === "Admin") {
     adminPanelLink.style.display = "block";
   }
 };
