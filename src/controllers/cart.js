@@ -3,6 +3,7 @@ const {
   addProductToCart,
   updateProductInCart,
   deleteProductFromcart,
+  totalPriceSummary,
 } = require("../services/cart");
 const checkouts = require("../services/checkout");
 
@@ -46,6 +47,15 @@ const updateOrDeleteProduct = async (req, res) => {
   }
 };
 
+const totalPrice = async (req, res) => {
+  try {
+    const cart = await totalPriceSummary(req.user, req.body.total);
+    res.status(200).json(cart);
+  } catch (error) {
+    res.status(500).json(error.message);
+  }
+};
+
 const checkout = async (req, res) => {
   try {
     await checkouts(req.user);
@@ -60,4 +70,5 @@ module.exports = {
   addProduct,
   updateOrDeleteProduct,
   checkout,
+  totalPrice,
 };

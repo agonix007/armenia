@@ -90,9 +90,19 @@ const deleteProductFromcart = async (user, productId) => {
   return await cart.save();
 };
 
+const totalPriceSummary = async(user, total) => {
+  const cart = await Cart.findOne({ email: user.email });
+  if (!cart) {
+    throw new Error("User doesn't have a cart");
+  }
+  cart.total = total;
+  return await cart.save();
+}
+
 module.exports = {
   getCartByUser,
   addProductToCart,
   updateProductInCart,
   deleteProductFromcart,
+  totalPriceSummary,
 };

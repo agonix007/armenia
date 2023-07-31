@@ -60,4 +60,71 @@ cancelModal.addEventListener("click", function () {
   walletModal.style.display = "none";
 });
 
+const getTotalPrice = async () => {
+  try {
+    const response = await fetch("/api/cart");
+    const cartData = await response.json();
 
+    const itemPrice = document.getElementById("itemPrice");
+    itemPrice.textContent = cartData.total.toLocaleString("en-IN");
+    const totalPrice = document.getElementById("totalPrice");
+    totalPrice.textContent = cartData.total.toLocaleString("en-IN");
+  } catch (error) {
+    console.log(error.message);
+    toastr.error(error.message);
+  }
+};
+getTotalPrice();
+
+const checkout = async () => {
+  const loader = document.getElementById("loader");
+
+  const address = document.getElementById("address").value;
+  const city = document.getElementById("city").value;
+  const state = document.getElementById("state").value;
+  const zip = document.getElementById("zip").value;
+
+  const fullAddress = {
+    address: address,
+    city: city,
+    state: state,
+    zip: zip,
+  };
+
+  try {
+    loader.style.display = "block";
+
+    const response1 = await fetch("/api/cart/checkout", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const response2 = await fetch("/api/account", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(fullAddress),
+    });
+    if (!response1.ok) {
+      const errorMsg = await response1.json();
+      toastr.warning(errorMsg);
+      return;
+    }
+    if (!response2.ok) {
+      const errorMsg = await response2.json();
+      toastr.warning(errorMsg);
+      return;
+    }
+    window.location.href = "/successful";
+  } catch (error) {
+    console.log(error.message);
+    toastr.error(error.message);
+  } finally {
+    loader.style.display = "none";
+  }
+};
+
+const checkoutBtn = document.getElementById("checkoutBtn");
+checkoutBtn.addEventListener("click", checkout);

@@ -35,7 +35,9 @@ const addingAndRemovingCartItems = (items) => {
                   value="${detail.quantity}"
                 />
               </td>
-              <td id="tprice-${uniqueId}" class="item-total-price">₹${total.toLocaleString("en-IN")}</td>
+              <td id="tprice-${uniqueId}" class="item-total-price">₹${total.toLocaleString(
+      "en-IN"
+    )}</td>
             </tr>`;
   });
 
@@ -58,7 +60,6 @@ const addingAndRemovingCartItems = (items) => {
         const response = await fetch("/api/cart", {
           method: "PATCH",
           headers: {
-            // Authorization: localStorage.getItem("token"),
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -76,11 +77,13 @@ const addingAndRemovingCartItems = (items) => {
         let totalSummary = 0;
         allTPrices.forEach((tpriceElement) => {
           const priceValue = +tpriceElement.textContent.replace(/₹|,/g, "");
-          console.log(priceValue);
           totalSummary += priceValue;
         });
+        settingTotal(totalSummary);
         const totalSummaryElement = document.getElementById("totalSummary");
-        totalSummaryElement.textContent = `₹${totalSummary.toLocaleString("en-IN")}`;
+        totalSummaryElement.textContent = `₹${totalSummary.toLocaleString(
+          "en-IN"
+        )}`;
       } catch (error) {
         console.log(error.message);
         toastr.error(error.message);
@@ -95,6 +98,7 @@ const addingAndRemovingCartItems = (items) => {
     const priceValue = +tpriceElement.textContent.replace(/₹|,/g, "");
     totalSummary += priceValue;
   });
+  settingTotal(totalSummary);
   const totalSummaryElement = document.getElementById("totalSummary");
   totalSummaryElement.textContent = `₹${totalSummary.toLocaleString("en-IN")}`;
 
@@ -106,7 +110,6 @@ const addingAndRemovingCartItems = (items) => {
         const response = await fetch("/api/cart", {
           method: "PATCH",
           headers: {
-            // Authorization: localStorage.getItem("token"),
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -127,7 +130,28 @@ const addingAndRemovingCartItems = (items) => {
   });
 };
 
+async function settingTotal(checkoutTotal) {
+  try {
+    const response = await fetch("/api/cart/tprice", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        total: checkoutTotal,
+      }),
+    });
+    if (!response.ok) {
+      throw new Error("Internal Server Error");
+    }
+  } catch (error) {
+    console.log(error.message);
+    toastr.error(error.message);
+  }
+}
+
 const sorry = document.getElementById("sorry");
+const subTotal = document.getElementById("subTotal")
 const cartItems = document.getElementById("cart-items");
 
 const getCartItems = async () => {
@@ -135,7 +159,6 @@ const getCartItems = async () => {
     const response = await fetch(`/api/cart`, {
       method: "GET",
       headers: {
-        // Authorization: localStorage.getItem("token"),
         "Content-Type": "application/json",
       },
     });
@@ -148,10 +171,15 @@ const getCartItems = async () => {
     }
     sorry.style.display = "none";
     cartItems.style.display = "block";
+    subTotal.style.display = "block";
+
     const data = await response.json();
+
     addingAndRemovingCartItems(data.cartItems);
+
     const totalItems = document.getElementById("totalItems");
     totalItems.innerText = `${data.cartItems.length}`;
+
     // updateCartIndicator(data.cartItems.length);
   } catch (error) {
     console.log(error.message);

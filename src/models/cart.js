@@ -14,6 +14,10 @@ const cartSchema = new mongoose.Schema({
       quantity: { type: Number },
     },
   ],
+  total: {
+    type: Number,
+    default: 0
+  },
   paymentOptions: {
     type: String,
     default: config.default_payment_option,

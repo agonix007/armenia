@@ -30,7 +30,7 @@ router.get("/account", authRedirect, (req, res) => {
     city: req.user.city,
     state: req.user.state,
     zip: req.user.zip,
-    walletMoney: req.user.walletMoney,
+    walletMoney: req.user.walletMoney.toLocaleString("en-IN"),
     bio: req.user.bio,
     pic: req.user.pic,
   });
@@ -46,7 +46,7 @@ router.get("/checkout", authRedirect, (req, res) => {
     city: req.user.city,
     state: req.user.state,
     zip: req.user.zip,
-    walletMoney: req.user.walletMoney,
+    walletMoney: req.user.walletMoney.toLocaleString("en-IN"),
   });
 });
 router.get("/successful", authRedirect, (req, res) => {

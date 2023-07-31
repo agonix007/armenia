@@ -21,7 +21,7 @@ const checkouts = async (user) => {
       total = total + item.product.price * item.quantity;
     });
     if (total > user.walletMoney) {
-      throw new Error("User has insufficient money to checkout");
+      throw new Error("Insufficient wallet money");
     }
     user.walletMoney -= total;
     await user.save();
@@ -33,6 +33,7 @@ const checkouts = async (user) => {
     });
     await company.save();
     cart.cartItems = [];
+    cart.total = 0;
     await cart.save();
   }
 };
