@@ -20,7 +20,7 @@ const adminAuth = async (req, res, next) => {
     req.token = token;
     req.user = user;
     if (req.user.bio !== "Admin") {
-      res.redirect("/account");
+      res.render("noAccess");
       throw new Error("Must be Admin to access this page.");
     }
     next();
