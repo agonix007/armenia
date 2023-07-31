@@ -27,17 +27,31 @@ const checkouts = async (user) => {
       user.walletMoney -= total;
       await user.save();
     }
-    const company = new Company({
-      name: user.name,
-      email: user.email,
-      address: `${user.address}, ${user.city}, ${user.state}, ${user.zip}`,
-      userCart: cart,
-    });
-    await company.save();
+    const order = await Company.findOne({ email: user.email });
+    if (!order || order === null) {
+      const company = new Company({
+        name: user.name,
+        email: user.email,
+        address: `${user.address}, ${user.city}, ${user.state}, ${user.zip}`,
+      });
+      await company.orderHistory();
+      await company.save();
+    } else {
+      await order.orderHistory();
+      await order.save();
+    }
     cart.cartItems = [];
     cart.total = 0;
     await cart.save();
   }
 };
 
-module.exports = checkouts;
+const orderedItems = async (user) => {
+  const order = await Company.findOne({ email: user.email });
+  if (!order || order === null) {
+    throw new Error("User hasn't ordered any products yet");
+  }
+  return order;
+};
+
+module.exports = { checkouts, orderedItems };

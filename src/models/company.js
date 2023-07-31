@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const {cartSchema} = require("./cart");
+const { Cart, cartSchema } = require("./cart");
 const config = require("../config/config");
 
 const companySchema = new mongoose.Schema({
@@ -19,10 +19,23 @@ const companySchema = new mongoose.Schema({
     trim: true,
     default: config.default_address,
   },
-  userCart: {
-    type: cartSchema,
-  },
+  userCart: [
+    {
+      orderedItems: { type: cartSchema },
+      orderedAt: { type: Date, default: Date.now },
+    },
+  ],
 });
+
+companySchema.methods.orderHistory = async function () {
+  try {
+    const cart = await Cart.findOne({ email: this.email });
+    this.userCart = this.userCart.concat({orderedItems: cart});
+    await this.save();
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
 const Company = new mongoose.model("Company", companySchema);
 
