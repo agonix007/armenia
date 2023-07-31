@@ -51,7 +51,7 @@ router.get("/checkout", authRedirect, authCheckout, (req, res) => {
     walletMoney: req.user.walletMoney.toLocaleString("en-IN"),
   });
 });
-router.get("/successful", authRedirect, authCheckout, (req, res) => {
+router.get("/successful", authRedirect, (req, res) => {
   res.render("successful");
 });
 router.get("/admin", adminAuth, (req, res) => {

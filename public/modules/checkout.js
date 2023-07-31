@@ -76,6 +76,56 @@ const getTotalPrice = async () => {
 };
 getTotalPrice();
 
+// Payment options saving
+document.addEventListener("DOMContentLoaded", async () => {
+  const selectedOptionValue = document.querySelector(
+    'input[name="payment"]:checked'
+  ).value;
+  try {
+    const response = await fetch("/api/cart/payment", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ paymentOptions: selectedOptionValue }),
+    });
+    if (!response.ok) {
+      const errorMsg = await response.json();
+      toastr.error(errorMsg);
+      return;
+    }
+  } catch (error) {
+    console.error(error.message);
+    toastr.error(error.message);
+  }
+});
+const paymentOptions = document.getElementsByName("payment");
+paymentOptions.forEach((option) => {
+  option.addEventListener("change", async function () {
+    const selectedOptionValue = document.querySelector(
+      'input[name="payment"]:checked'
+    ).value;
+    try {
+      const response = await fetch("/api/cart/payment", {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ paymentOptions: selectedOptionValue }),
+      });
+      if (!response.ok) {
+        const errorMsg = await response.json();
+        toastr.error(errorMsg);
+        return;
+      }
+    } catch (error) {
+      console.error(error.message);
+      toastr.error(error.message);
+    }
+  });
+});
+
+// Full Checkout Functionality
 const checkout = async () => {
   const loader = document.getElementById("loader");
 

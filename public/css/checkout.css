@@ -89,7 +89,6 @@ li {
   margin-bottom: 10px;
 }
 .checkout form .row .col .inputBox input {
-  width: 100%;
   padding: 8px 15px;
   font-size: 15px;
   text-transform: none;
@@ -259,6 +258,18 @@ tfoot {
   border: 1px solid #0a999e;
 }
 
+/* ADDING PAYMENT CHANGEABLE SECTION */
+.payment-option input[type="radio"]:checked + label{
+  font-weight: 500; 
+}
+.payment-option {
+  display: flex;
+  align-items: center;
+}
+.payment-option input[type="radio"] {
+  margin-right: 5px;
+}
+
 /* footer */
 .footer {
   background-color: #121212;
@@ -298,7 +309,7 @@ tfoot {
 /* loader */
 #loader {
   position: absolute;
-  left: 280px;
+  left: 300px;
   top: 18px;
   display: none;
 }

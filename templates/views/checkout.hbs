@@ -182,7 +182,7 @@
           </div>
 
           <div class="col">
-            <h3 class="title">Payment</h3>
+            <h3 class="title">Payment <span class="second">Method</span></h3>
             <div class="inputBox">
               <span class="fw-bold">Total balance:</span>
               <div class="amt d-flex justify-content-between my-2">
@@ -214,7 +214,16 @@
                   >Cancel</button>
                 </div>
               </div>
-
+            <div class="radio mt-3 mb-2">
+              <label for="changeMethod" class="form-label fw-bold">Choose your mode of payment<span class="star">*</span></label>
+              <div class="payment-option">
+                <input type="radio" id="onlinePay" name="payment" value="wallet" checked>
+                <label for="onlinePay">Online Pay</label>
+              </div>
+              <div class="payment-option">
+                <input type="radio" id="cashOnDelivery" name="payment" value="COD">
+                <label for="cashOnDelivery">Cash on Delivery</label>
+              </div>
             </div>
             <div class="oder-summary">
               <h3 class="title">Order <span class="second">Summary</span></h3>
