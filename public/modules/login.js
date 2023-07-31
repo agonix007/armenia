@@ -10,6 +10,15 @@ toastr.options = {
 const loginUser = async (event) => {
   event.preventDefault();
 
+  if (localStorage.getItem("username")) {
+    toastr.info("You have already Logged in");
+    toastr.success("Redirecting to home page");
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 1800);
+    return;
+  }
+
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
@@ -38,15 +47,6 @@ const loginUser = async (event) => {
       // Setting the userName, token in local storage
       localStorage.setItem("username", data.name);
       // localStorage.setItem("token", token);
-
-      if (localStorage.getItem("username") === data.name) {
-        toastr.info("You have already Logged in");
-        toastr.success("Redirecting to home page");
-        setTimeout(() => {
-          window.location.href = "/";
-        }, 1500);
-        return;
-      }
 
       // Showing toastr fo success login
       toastr.success("Login Successful");
