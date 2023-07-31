@@ -10,8 +10,12 @@ toastr.options = {
 const addingOrder = (items) => {
   const orderedItems = document.getElementById("orderedItems");
   items.forEach((product) => {
-    const indianTime = new Date(product.orderedAt).toLocaleDateString("en-IN");
-    product.orderedItems.cartItems.forEach((item) => {
+    const orderDate = new Date(product.orderedAt)
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    const indianTime = new Intl.DateTimeFormat("en-IN", options).format(
+      orderDate
+    );
+    product.orderedItems.cartItems.reverse().forEach((item) => {
       orderedItems.innerHTML += `
       <div class="product-section">
           <div class="product-image">
@@ -26,19 +30,24 @@ const addingOrder = (items) => {
           </div>
           </div>  
       `;
-    })
+    });
   });
 };
 
 const getOrderedItems = async () => {
   try {
+    const pOrder = document.getElementById("pOrder");
+    const noOrder = document.getElementById("noOrder");
     const response = await fetch("/api/cart/orders");
     if (!response.ok) {
       const errorMsg = await response.json();
-      toastr.error(errorMsg);
+      noOrder.style.display = "block";
+      console.log(errorMsg);
       return;
     }
     const data = await response.json();
+    noOrder.style.display = "none";
+    pOrder.style.display = "block";
     addingOrder(data.userCart.reverse());
   } catch (error) {
     console.log(error.message);

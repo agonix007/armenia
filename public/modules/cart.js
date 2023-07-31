@@ -166,7 +166,7 @@ const getCartItems = async () => {
       sorry.style.display = "block";
       cartItems.style.display = "none";
       const errorMsg = await response.json();
-      toastr.warning(errorMsg);
+      console.log(errorMsg)
       return;
     }
     sorry.style.display = "none";
@@ -175,7 +175,7 @@ const getCartItems = async () => {
 
     const data = await response.json();
 
-    addingAndRemovingCartItems(data.cartItems);
+    addingAndRemovingCartItems(data.cartItems.reverse());
 
     const totalItems = document.getElementById("totalItems");
     totalItems.innerText = `${data.cartItems.length}`;
@@ -199,7 +199,6 @@ const checkout = () => {
 const updateCartIndicator = (count) => {
   const cartIndicator = document.getElementById("cartIndicator");
   cartIndicator.textContent = count > 10 ? "10+" : count.toString();
-  // localStorage.setItem("cartValue", count);
 };
 
 const account = document.getElementById("account");
