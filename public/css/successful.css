@@ -44,7 +44,7 @@ body {
   text-align: center;
   padding: 5px 10px;
   font-size: 1.5rem;
-  color: #47c778;
+  color: #1fcc61;
 }
 .details p {
   text-align: center;
@@ -62,19 +62,23 @@ body {
 .button a {
   text-decoration: none;
   color: #fff;
-  background-color: #23bd5e;
   font-weight: 700;
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
   font-size: 1.2rem;
-  box-shadow: 0 4px 10px 0 rgba(0, 0, 2, 0.37);
+  background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   text-transform: capitalize;
+  transition: 0.5s ease-out;
 }
 .button a:hover {
-  background: #1adf4bd0;
-  color: #1f3a30;
+  background: white;
+  color: #04b194;
+  border: 1px solid #04b194;
 }
+
 .wright {
   font-size: 2.5rem;
   font-weight: 900;
