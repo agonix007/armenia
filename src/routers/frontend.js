@@ -54,6 +54,9 @@ router.get("/checkout", authRedirect, authCheckout, (req, res) => {
 router.get("/successful", authRedirect, (req, res) => {
   res.render("successful");
 });
+router.get("/order", authRedirect, (req, res) => {
+  res.render("order");
+});
 router.get("/admin", adminAuth, (req, res) => {
   res.render("admin");
 });
