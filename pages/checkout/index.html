@@ -107,7 +107,7 @@
         </div>
 
         <div class="col">
-          <h3 class="title">Payment</h3>
+          <h3 class="title">Payment <span class="second">Method</span></h3>
           <div class="inputBox">
             <span class="fw-bold">Total balance:</span>
             <div class="amt d-flex justify-content-between my-2">
@@ -128,16 +128,16 @@
               <button type="button" class="btn fw-bold" id="cancelBtn">Cancel</button>
             </div>
           </div>
-
-          <h3 class="title">Payment Method</h3>
-          <div class="inputBox">
-            <label for="exampleInputState1" class="form-label fw-bold">Change your method<span
-                class="star">*</span></label>
-            <select class="form-select" aria-label="Default select example" name="state">
-              <option selected>Select payment method</option>
-              <option value="Online Pay">Online pay</option>
-              <option value="Cash on delivary">Cash on delivary</option>
-            </select>
+          <div class="radio">
+            <label for="changeMethod" class="form-label fw-bold">Change your method<span class="star">*</span></label>
+            <div class="payment-option">
+              <input type="radio" id="onlinePay" name="payment" value="online">
+              <label for="onlinePay">Online Pay</label>
+            </div>
+            <div class="payment-option">
+              <input type="radio" id="cashOnDelivery" name="payment" value="cash">
+              <label for="cashOnDelivery">Cash on Delivery</label>
+            </div>
           </div>
 
           <div class="oder-summary">

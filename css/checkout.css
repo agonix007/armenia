@@ -294,5 +294,17 @@ tfoot {
   color: #04b194;
   border: 1px solid #04b194;
 }
+/* ADDING PAYMENT CHANGEABLE SECTION */
+.radio{
+  padding: 10px;
+  margin: 6px;
+}
+.payment-option {
+  display: flex;
+  align-items: center;
+}
+.payment-option input[type="radio"] {
+  margin-right: 5px;
+}
 
 
