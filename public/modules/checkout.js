@@ -117,7 +117,12 @@ const checkout = async () => {
       toastr.warning(errorMsg);
       return;
     }
-    window.location.href = "/successful";
+    toastr.success("Ordered Successful");
+
+    // Redirect to home page after a short delay
+    setTimeout(() => {
+      window.location.href = "/successful";
+    }, 1500);
   } catch (error) {
     console.log(error.message);
     toastr.error(error.message);
