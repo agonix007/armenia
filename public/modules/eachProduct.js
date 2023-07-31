@@ -81,6 +81,7 @@ const addToCart = async() => {
       return
     }
     toastr.success("Product added to cart successfully");
+    location.reload();
   } catch (error) {
     console.log(error.message);
     toastr.info("Please login to join the journey");

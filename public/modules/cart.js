@@ -180,7 +180,7 @@ const getCartItems = async () => {
     const totalItems = document.getElementById("totalItems");
     totalItems.innerText = `${data.cartItems.length}`;
 
-    // updateCartIndicator(data.cartItems.length);
+    updateCartIndicator(data.cartItems.length);
   } catch (error) {
     console.log(error.message);
     toastr.error(error.message);
@@ -196,11 +196,11 @@ const checkout = () => {
   window.location.href = "/checkout";
 };
 
-// const updateCartIndicator = (count) => {
-//   const cartIndicator = document.getElementById("cartIndicator");
-//   cartIndicator.textContent = count > 10 ? "10+" : count.toString();
-//   localStorage.setItem("cartValue", count);
-// };
+const updateCartIndicator = (count) => {
+  const cartIndicator = document.getElementById("cartIndicator");
+  cartIndicator.textContent = count > 10 ? "10+" : count.toString();
+  // localStorage.setItem("cartValue", count);
+};
 
 const account = document.getElementById("account");
 const cart = document.getElementById("cartFeature");
