@@ -6,7 +6,11 @@ const {
   totalPriceSummary,
   paymentMethod,
 } = require("../services/cart");
-const { checkouts, orderedItems } = require("../services/checkout");
+const {
+  checkouts,
+  orderedItems,
+  getOrderItemsById,
+} = require("../services/checkout");
 
 const getCart = async (req, res) => {
   try {
@@ -84,6 +88,16 @@ const orders = async (req, res) => {
   }
 };
 
+const getOrderItems = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const data = await getOrderItemsById(req.user, id);
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
+};
+
 module.exports = {
   getCart,
   addProduct,
@@ -92,4 +106,5 @@ module.exports = {
   totalPrice,
   paymentOptions,
   orders,
+  getOrderItems,
 };

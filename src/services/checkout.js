@@ -54,4 +54,12 @@ const orderedItems = async (user) => {
   return order;
 };
 
-module.exports = { checkouts, orderedItems };
+const getOrderItemsById = async (user, id) => {
+  const order = await Company.findOne({ email: user.email });
+  const item = order.userCart.find(
+    (item) => item._id.toString() === id
+  );
+  return item;
+};
+
+module.exports = { checkouts, orderedItems, getOrderItemsById };
