@@ -24,6 +24,7 @@
     "http-status": "^1.6.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.3.4",
+    "uuid": "^9.0.0",
     "validator": "^13.9.0"
   }
 }
