@@ -2,7 +2,7 @@ async function updateCartIndicator() {
   try {
     const response = await fetch("/api/cart");
     if (!response.ok) {
-      throw new Error("Failed to fetch cart data");
+      throw new Error("Add products to your cart.");
     }
     const cartData = await response.json();
     const cartCount = cartData.cartItems.length;
