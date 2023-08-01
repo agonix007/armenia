@@ -15,7 +15,7 @@ const addingOrder = (items) => {
     const indianTime = new Intl.DateTimeFormat("en-IN", options).format(
       orderDate
     );
-    product.orderedItems.cartItems.reverse().forEach((item) => {
+    product.orderedItems.cartItems.reverse().forEach((item, i) => {
       const truncatedDescription = truncateTextByWords(
         item.product.description, 7);
       orderedItems.innerHTML += `
@@ -28,7 +28,7 @@ const addingOrder = (items) => {
             <p class="product-description">
               <p>${truncatedDescription}</p><strong>Order date:</strong>
               ${indianTime}</p>
-            <button type="button" class="btn btn-grad fw-bold">View</button>
+            <button type="button" class="btn btn-grad fw-bold" onclick="showOrderDetails('${product._id}', ${i})">View</button>
           </div>
           </div>  
       `;
@@ -50,7 +50,7 @@ const getOrderedItems = async () => {
   try {
     const pOrder = document.getElementById("pOrder");
     const noOrder = document.getElementById("noOrder");
-    const response = await fetch("/api/cart/orders");
+    const response = await fetch("/api/orders");
     if (!response.ok) {
       const errorMsg = await response.json();
       noOrder.style.display = "block";
