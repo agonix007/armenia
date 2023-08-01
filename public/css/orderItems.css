@@ -161,15 +161,12 @@ li {
   color: var(--green);
 }
 
-/* .btn-grad {
-  position: absolute;
-  left: 86%;
-  top: 65%;
+.btn-grad {
   background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   color: white;
-  padding: 6px 28px;
+  padding: 6px 14px;
   border-radius: 10px;
   transition: 0.3s ease-in-out;
 }
@@ -177,7 +174,7 @@ li {
   background: white;
   color: #04b194;
   border: 1px solid #04b194;
-} */
+}
 
 /* Main content */
 #progressbar-1 {
@@ -267,16 +264,17 @@ li {
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-weight: 500;
   color: #ffffff;
-  border: none;
-  padding: 8px 14px;
+  border: 1px solid #0a999e;
+  padding: 6px 14px;
   margin: 10px;
   border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 .viewclass a:hover {
   background: #ffffff;
   color: #05835d;
-  border: 0.5px solid #0a999e;
+  border: 1px solid #0a999e;
 }
 #Switch a {
   text-decoration: none;
@@ -286,7 +284,7 @@ li {
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   font-weight: 500;
   color: #ffffff;
-  border: 0.5px solid #0a999e;
+  border: 1px solid #0a999e;
   padding: 8px 14px;
   margin: 10px;
   border-radius: 10px;
@@ -295,5 +293,11 @@ li {
 #Switch a:hover {
   background: #ffffff;
   color: #05835d;
-  border: 0.5px solid #0a999e;
+  border: 1px solid #0a999e;
+}
+
+.imageUrl img{
+  max-width: 200px;
+  max-height: 200px;
+  mix-blend-mode: darken;
 }

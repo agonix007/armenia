@@ -18,13 +18,16 @@ const addingData = (data) => {
   );
   const indianTime = new Date(data.orderedAt).toLocaleTimeString("en-IN");
   const detail = data.orderedItems.cartItems.reverse()[productIndex];
+  document.title = detail.product.pname;
   cardData.innerHTML = `
         <div class="card-header p-4">
                 <div class="d-flex justify-content-between align-items-center">
                   <div>
                     <p class="text-muted mb-2">
                       Order ID:
-                      <span class="fw-bold text-body">#${data.orderId}</span></p>
+                      <span class="fw-bold text-body">#${
+                        data.orderId
+                      }</span></p>
                     <p class="text-muted mb-0">
                       Place On
                       <span class="fw-bold text-body">${indianDate}</span>
@@ -32,7 +35,9 @@ const addingData = (data) => {
                   </div>
                   <!-- SELF_CLASS -->
                   <div class="viewclass">
-                    <h6 class="mb-0"> <a href="#">View Details</a> </h6>
+                    <button type="button" class="btn btn-grad fw-bold" onclick="showProductDetails('${
+                      detail.product._id
+                    }')">View Details</button>
                   </div>
                 </div>
               </div>
@@ -43,15 +48,16 @@ const addingData = (data) => {
                     <p class="text-muted"> Qt: ${detail.quantity} item</p>
                     <h4 class="mb-3">
                       &#8377;${detail.product.price * detail.quantity}
-                      <span class="small text-muted"> via (${data.orderedItems.paymentOptions}) </span></h4>
+                      <span class="small text-muted"> via (${
+                        data.orderedItems.paymentOptions
+                      }) </span></h4>
                     <p class="text-muted">Tracking Status on:
                       <span class="text-body">${indianTime}</span></p>
                   </div>
-                  <div>
+                  <div class="imageUrl">
                     <img
                       class="align-self-center img-fluid"
                       src="${detail.product.imageUrl}"
-                      width="200"
                     />
                   </div>
                 </div>
@@ -70,21 +76,8 @@ const addingData = (data) => {
                 <div class="d-flex justify-content-between">
                   <!-- SELF_ID -->
                   <h5 class="fw-normal mb-0" id="Switch"><a
-                      href="#!"
-                    >Track</a></h5>
-                  <div class="border-start h-100" id="Switch"></div>
-                  <h5 class="fw-normal mb-0" id="Switch"><a
-                      href="#!"
-                    >Cancel</a></h5>
-                  <div class="border-start h-100"></div>
-                  <h5 class="fw-normal mb-0" id="Switch"><a
-                      href="#!"
-                    >Pre-pay</a></h5>
-                  <div class="border-start h-100"></div>
-                  <h5 class="fw-normal mb-0"><a href="#!" class="text-muted"><i
-                        class="fas fa-ellipsis-v"
-                      ></i></a>
-                  </h5>
+                      href="/orders"
+                    >Back</a></h5>
                 </div>
               </div>
     `;
