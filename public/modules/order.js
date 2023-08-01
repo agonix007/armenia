@@ -10,12 +10,14 @@ toastr.options = {
 const addingOrder = (items) => {
   const orderedItems = document.getElementById("orderedItems");
   items.forEach((product) => {
-    const orderDate = new Date(product.orderedAt)
+    const orderDate = new Date(product.orderedAt);
     const options = { day: "numeric", month: "long", year: "numeric" };
     const indianTime = new Intl.DateTimeFormat("en-IN", options).format(
       orderDate
     );
     product.orderedItems.cartItems.reverse().forEach((item) => {
+      const truncatedDescription = truncateTextByWords(
+        item.product.description, 7);
       orderedItems.innerHTML += `
       <div class="product-section">
           <div class="product-image">
@@ -24,7 +26,7 @@ const addingOrder = (items) => {
           <div class="product-details">
             <h2 class="product-name">${item.product.pname}</h2>
             <p class="product-description">
-              <p>${item.product.description}</p><strong>Order date:</strong>
+              <p>${truncatedDescription}</p><strong>Order date:</strong>
               ${indianTime}</p>
             <button type="button" class="btn btn-grad fw-bold">View</button>
           </div>
@@ -33,6 +35,16 @@ const addingOrder = (items) => {
     });
   });
 };
+
+function truncateTextByWords(text, maxWords) {
+  const words = text.split(" ");
+  if (words.length <= maxWords) {
+    return text;
+  } else {
+    const truncatedWords = words.slice(0, maxWords).join(" ");
+    return truncatedWords + ". . . .";
+  }
+}
 
 const getOrderedItems = async () => {
   try {

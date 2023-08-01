@@ -165,7 +165,7 @@ li {
 .whbox {
   padding: 2rem;
   margin: 1.5rem 10rem;
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -187,11 +187,15 @@ h1 {
   border-bottom: 1px solid #ccc;
 }
 
+.product-image{
+  width: 180px;
+}
+
 .product-image img {
-  width: 150px;
-  /* Updated product image size */
+  max-width: 150px;
+  max-height: 150px;
   margin-right: 30px;
-  /* Increased the gap between image and details */
+  mix-blend-mode: darken;
 }
 
 .product-details {

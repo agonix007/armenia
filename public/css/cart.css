@@ -241,8 +241,8 @@ td span {
   cursor: pointer;
 }
 td img {
-  width: 80px;
-  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
   margin-right: 10px;
   cursor: pointer;
 }
