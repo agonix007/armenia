@@ -1,0 +1,295 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <link rel="stylesheet" href="../../css/checkout.css" />
+  </head>
+  <body>
+    <!-- Navbar starts -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid mx-5">
+          <a class="navbar-brand fw-bold fs-3 c-name" href="#">Armenia.in</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item fw-bold">
+                <a class="nav-link" aria-current="page" href="#">Checkout</a>
+              </li>
+            </ul>
+            <div class="cart ms-auto">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Navbar ends -->
+
+    <!-- Main Section starts -->
+    <div class="checkout my-5">
+      <form action="">
+        <div class="row">
+          <div class="col col1">
+            <h3 class="title">billing <span class="second">address</span></h3>
+            <div class="inputBox">
+              <label for="exampleInputName1" class="form-label fw-bold">Full
+                Name<span class="star">*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="John Doe"
+                name="name"
+                value="{{name}}"
+                disabled
+                required
+              />
+            </div>
+            <div class="inputBox">
+              <label for="email" class="form-label fw-bold">Email<span
+                  class="star"
+                >*</span></label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+                name="email"
+                placeholder="example123@email.com"
+                value="{{email}}"
+                disabled
+                required
+              />
+            </div>
+            <div class="inputBox">
+              <label for="address" class="form-label fw-bold">Address<span
+                  class="star"
+                >*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="address"
+                placeholder="house no.- street - locality"
+                name="address"
+                value="{{address}}"
+                required
+              />
+            </div>
+            <div class="inputBox">
+              <label for="city" class="form-label fw-bold">City<span
+                  class="star"
+                >*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="city"
+                placeholder="Kolkata"
+                name="city"
+                value="{{city}}"
+                required
+              />
+            </div>
+            <div class="flex">
+              <div class="inputBox">
+                <label for="state" class="form-label fw-bold">State<span
+                    class="star"
+                  >*</span></label>
+                <input
+                  type="text"
+                  id="state"
+                  class="form-control"
+                  list="state-list"
+                  name="state"
+                  placeholder="West Bengal"
+                  value="{{state}}"
+                  required
+                />
+                <datalist id="state-list">
+                  <option value="Andhra Pradesh"></option>
+                  <option value="Arunachal Pradesh"></option>
+                  <option value="Assam"></option>
+                  <option value="Bihar"></option>
+                  <option value="Chhattisgarh"></option>
+                  <option value="Goa"></option>
+                  <option value="Gujarat"></option>
+                  <option value="Haryana"></option>
+                  <option value="Himachal Pradesh"></option>
+                  <option value="Jharkhand"></option>
+                  <option value="Karnataka"></option>
+                  <option value="Kerala"></option>
+                  <option value="Madhya Pradesh"></option>
+                  <option value="Maharashtra"></option>
+                  <option value="Manipur"></option>
+                  <option value="Meghalaya"></option>
+                  <option value="Mizoram"></option>
+                  <option value="Nagaland"></option>
+                  <option value="Odisha"></option>
+                  <option value="Punjab"></option>
+                  <option value="Rajasthan"></option>
+                  <option value="Sikkim"></option>
+                  <option value="Tamil Nadu"></option>
+                  <option value="Telangana"></option>
+                  <option value="Tripura"></option>
+                  <option value="Uttar Pradesh"></option>
+                  <option value="Uttarakhand"></option>
+                  <option value="West Bengal"></option>
+                </datalist>
+              </div>
+              <div class="inputBox">
+                <label for="zip" class="form-label fw-bold">Pin code<span
+                    class="star"
+                  >*</span></label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="zip"
+                  placeholder="123 456"
+                  name="zip"
+                  value="{{zip}}"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <h3 class="title">Payment <span class="second">Method</span></h3>
+            <div class="inputBox">
+              <span class="fw-bold">Total balance:</span>
+              <div class="amt d-flex justify-content-between my-2">
+                <div class="d-flex">
+                  <img src="../../images/checkout/wallet.png" alt="wallet" />
+                  <p>&#x20B9;{{walletMoney}}</p>
+                </div>
+                <button type="button" class="btn fw-bold" id="openModalBtn">Add
+                  amount</button>
+              </div>
+
+              <!--Wallet  Modal -->
+              <div class="wallet-modal" id="walletModal">
+                <div class="wallet-modal-content">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="addMoney"
+                    placeholder="Add amount &#8377;"
+                    name="money"
+                    required
+                  />
+                  <button type="button" class="btn fw-bold" id="addMoneyBtn">Add
+                    money</button>
+                  <button
+                    type="button"
+                    class="btn fw-bold"
+                    id="cancelModal"
+                  >Cancel</button>
+                </div>
+              </div>
+            <div class="radio mt-3 mb-2">
+              <label for="changeMethod" class="form-label fw-bold">Choose your mode of payment<span class="star">*</span></label>
+              <div class="payment-option">
+                <input type="radio" id="onlinePay" name="payment" value="wallet" checked>
+                <label for="onlinePay">Online Pay</label>
+              </div>
+              <div class="payment-option">
+                <input type="radio" id="cashOnDelivery" name="payment" value="COD">
+                <label for="cashOnDelivery">Cash on Delivery</label>
+              </div>
+            </div>
+            <div class="oder-summary">
+              <h3 class="title">Order <span class="second">Summary</span></h3>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span>Items:</span>
+                      <p class="m-0">&#x20B9;<span
+                          id="itemPrice"
+                        >0</span>.00</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="pt-1 py-2">
+                      <span>Delivery:</span>
+                      <span>&#x20B9;0.00</span>
+                    </td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr class="total">
+                    <td class="my-2">
+                      <span>Total:</span>
+                      <p class="right-align m-0">&#x20B9;<span
+                          id="totalPrice"
+                        >0</span>.00</p>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+              <div class="fw-bold saved pt-1">
+                You have saved (56%) of your Savings.
+              </div>
+              <div style="position: relative;">
+                <button
+                  type="button"
+                  class="btn btn-grad mt-3 fw-bold"
+                  id="checkoutBtn"
+                >Place Your Order</button>
+                <div id="loader">
+                  <div class="loadingio-spinner-rolling-0c1zcfx6p7jn">
+                    <div class="ldio-am89n11ugq">
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Main Section ends -->
+
+    <script type="module" src="../../modules/checkout.js"></script>
+    <script
+      src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

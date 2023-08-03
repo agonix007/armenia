@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <link rel="stylesheet" href="../../css/admin.css" />
+  </head>
+
+  <body>
+    <!-- Navbar starts -->
+    {{>navbar}}
+    <!-- Navbar ends -->
+
+    <section class="d-flex flex-column align-items-center">
+      <div class="heading">
+        <h3 class="fw-bold my-4">ADMIN<span> PANEL</span></h3>
+      </div>
+      <div class="adminpanel mb-5">
+        <h3 class="fw-bold m-0">ADDING <span>PRODUCTS</span></h3>
+        <div class="add-data">
+          <form action="#" id="addProducts">
+            <div class="dbox">
+              <label for="pname">
+                <strong>Product Name :</strong>
+              </label>
+              <input
+                type="pname"
+                name="pname"
+                id="pname"
+                placeholder="Jordan air."
+                autocomplete="off"
+                required
+              />
+            </div>
+            <hr />
+            <div class="dbox">
+              <label for="description">
+                <strong>Description :</strong>
+              </label>
+              <input
+                type="text"
+                name="description"
+                id="description"
+                placeholder="This is well quality product!"
+                size="60"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <hr />
+            <div class="dbox">
+              <label for="Price">
+                <strong>Price (&#8377;) :</strong>
+              </label>
+              <input
+                type="number"
+                name="price"
+                id="price"
+                inputmode="numeric"
+                placeholder="1299"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <hr />
+            <div class="dbox">
+              <label for="StrikePrice">
+                <strong>Strike Price (&#8377;) :</strong>
+              </label>
+              <input
+                type="number"
+                name="StrikePrice"
+                id="sprice"
+                inputmode="numeric"
+                placeholder="1549"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <hr />
+            <div class="dbox">
+              <label for="Catagories">
+                <strong>Categories :</strong>
+              </label>
+              <input
+                list="browsers"
+                name="browser"
+                id="categories"
+                placeholder="Gender"
+                size="10"
+                autocomplete="off"
+                required
+              />
+              <datalist id="browsers">
+                <option value="Male"></option>
+                <option value="Female"></option>
+                <option value="Unisex"></option>
+              </datalist>
+            </div>
+            <hr />
+            <div class="dbox">
+              <label for="brand">
+                <strong>Brand name :</strong>
+              </label>
+              <input
+                type="text"
+                name="brand"
+                id="brand"
+                placeholder="Nike"
+                required
+              />
+            </div>
+            <hr />
+            <div class="dbox">
+              <label for="Quantity">
+                <strong>Quantity :</strong>
+              </label>
+              <input
+                type="number"
+                name="quatity"
+                id="quantity"
+                placeholder="80"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <hr />
+            <div class="dbox">
+              <label for="url">
+                <strong>Image Url () :</strong>
+              </label>
+              <input
+                type="url"
+                name="url"
+                id="url"
+                placeholder="https://image.jpg/"
+                size="60"
+                autocomplete="off"
+                required
+              />
+            </div>
+            <hr />
+            <div class="buttons">
+              <button type="submit" class="btn btn-grad fw-bold">
+                Add Product
+              </button>
+              <button type="reset" class="btn btn-grad fw-bold">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer starts -->
+    <footer class="footer py-4">{{>footer}}</footer>
+    <!-- footer ends -->
+
+    <script type="module" src="../../modules/cartIndicator.js"></script>
+    <script type="module" src="../../modules/admin.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <link rel="stylesheet" href="../../css/account.css" />
+  </head>
+
+  <body>
+    <!-- Navbar starts -->
+    {{>navbar}}
+    <!-- Navbar ends -->
+
+    <section class="d-flex flex-column align-items-center">
+      <div class="heading">
+        <h3 class="fw-bold my-4">PROFILE<span> SECTION</span></h3>
+      </div>
+      <div class="whole-box mb-5">
+        <div class="profile-container">
+          <img
+            id="profilePicture"
+            src={{pic}}
+            alt="Profile Picture"
+            class="profile-picture mb-2"
+            width="100px"
+          />
+          <h2 class="m-0 fw-bold">{{name}}</h2>
+          <p class="m-0"><span class="fw-bold">Bio- </span> <em>{{bio}}</em></p>
+          <button type="btn" class="btn fw-bold" id="logoutAll">
+            Logout from all devices
+          </button>
+
+          <div class="avatar-options mt-2">
+            <div class="avatar-option" onclick="selectAvatar(this)">
+              <img
+                src="../../images/account/avatar-1.svg"
+                alt="Avatar 1"
+                width="80px"
+              />
+            </div>
+            <div class="avatar-option" onclick="selectAvatar(this)">
+              <img
+                src="../../images/account/avatar-2.svg"
+                alt="Avatar 2"
+                width="80px"
+              />
+            </div>
+            <div class="avatar-option" onclick="selectAvatar(this)">
+              <img
+                src="../../images/account/avatar-3.svg"
+                alt="Avatar 3"
+                width="80px"
+              />
+            </div>
+          </div>
+          <div class="avatar-options mt-2">
+            <div class="avatar-option selected" onclick="selectAvatar(this)">
+              <img
+                src="../../images/account/avatar-4.svg"
+                alt="Avatar 1"
+                width="80px"
+              />
+            </div>
+            <div class="avatar-option" onclick="selectAvatar(this)">
+              <img
+                src="../../images/account/avatar-5.svg"
+                alt="Avatar 2"
+                width="80px"
+              />
+            </div>
+            <div class="avatar-option" onclick="selectAvatar(this)">
+              <img
+                src="../../images/account/avatar-6.svg"
+                alt="Avatar 3"
+                width="80px"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="profile-details">
+          <div class="details">
+            <p class="m-0"><strong>Name:</strong>&nbsp;{{name}}</p>
+          </div>
+          <hr />
+          <div class="details">
+            <p class="m-0"><strong>Email:</strong>&nbsp;{{email}}</p>
+          </div>
+          <hr />
+          <div class="details">
+            <p class="m-0"><strong>Address:</strong>&nbsp;{{address}}</p>
+          </div>
+          <hr />
+          <div class="details">
+            <p class="m-0"><strong>City:</strong>&nbsp;{{city}}</p>
+          </div>
+          <hr />
+          <div class="details">
+            <p class="m-0"><strong>State:</strong>&nbsp;{{state}}</p>
+          </div>
+          <hr />
+          <div class="details">
+            <p class="m-0"><strong>Zip code:</strong>&nbsp;{{zip}}</p>
+          </div>
+          <hr />
+          <div class="details">
+            <p class="m-0">
+              <strong>Wallet money:</strong>&nbsp;&#8377;&nbsp;{{walletMoney}}/-
+            </p>
+          </div>
+          <hr />
+          <button id="updateButton" class="fw-bold updateButton me-2">Update</button>
+          <button type="button" class="fw-bold updateButton" id="openModalBtn">Add amount</button>
+
+          <!-- Address setting Modal starts-->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <div class="head">
+                <span class="close">&times;</span>
+                <h3 class="fw-bold m-0">Update <span>Information</span></h3>
+              </div>
+              <form action="#" id="updateAddress">
+                <div class="dbox">
+                  <label for="address">
+                    <strong>Enter your address :</strong></label
+                  >
+                  <input type="text" id="address" placeholder="{{address}}"/>
+                </div>
+                <hr />
+                <div class="dbox">
+                  <label for="city">
+                    <strong>Enter your city :</strong></label
+                  >
+                  <input
+                    type="text"
+                    id="city"
+                    list="city-list"
+                    placeholder="{{city}}"
+                    autocomplete="off"
+                  />
+                  <datalist id="city-list">
+                    <option value="Mumbai"></option>
+                    <option value="Delhi"></option>
+                    <option value="Kolkata"></option>
+                    <option value="Chennai"></option>
+                    <option value="Bengaluru"></option>
+                    <option value="Hyderabad"></option>
+                    <option value="Ahmedabad"></option>
+                    <option value="Pune"></option>
+                    <option value="Jaipur"></option>
+                    <option value="Lucknow"></option>
+                    <option value="Kochi"></option>
+                    <option value="Guwahati"></option>
+                    <option value="Patna"></option>
+                    <option value="Bhopal"></option>
+                    <option value="Indore"></option>
+                    <option value="Chandigarh"></option>
+                    <option value="Visakhapatnam"></option>
+                    <option value="Kanpur"></option>
+                    <option value="Agra"></option>
+                    <option value="Varanasi"></option>
+                    <option value="Thiruvananthapuram"></option>
+                    <option value="Nagpur"></option>
+                  </datalist>
+                </div>
+                <hr />
+                <div class="dbox">
+                  <label for="state"
+                    ><strong>Enter your state :</strong></label
+                  >
+                  <input
+                    type="text"
+                    id="state"
+                    list="state-list"
+                    placeholder="{{state}}"
+                    autocomplete="off"
+                  />
+                  <datalist id="state-list">
+                    <option value="Andhra Pradesh"></option>
+                    <option value="Arunachal Pradesh"></option>
+                    <option value="Assam"></option>
+                    <option value="Bihar"></option>
+                    <option value="Chhattisgarh"></option>
+                    <option value="Goa"></option>
+                    <option value="Gujarat"></option>
+                    <option value="Haryana"></option>
+                    <option value="Himachal Pradesh"></option>
+                    <option value="Jharkhand"></option>
+                    <option value="Karnataka"></option>
+                    <option value="Kerala"></option>
+                    <option value="Madhya Pradesh"></option>
+                    <option value="Maharashtra"></option>
+                    <option value="Manipur"></option>
+                    <option value="Meghalaya"></option>
+                    <option value="Mizoram"></option>
+                    <option value="Nagaland"></option>
+                    <option value="Odisha"></option>
+                    <option value="Punjab"></option>
+                    <option value="Rajasthan"></option>
+                    <option value="Sikkim"></option>
+                    <option value="Tamil Nadu"></option>
+                    <option value="Telangana"></option>
+                    <option value="Tripura"></option>
+                    <option value="Uttar Pradesh"></option>
+                    <option value="Uttarakhand"></option>
+                    <option value="West Bengal"></option>
+                  </datalist>
+                </div>
+                <hr />
+                <div class="dbox">
+                  <label for="zipCode"><strong>Zip code :</strong></label>
+                  <input type="number" id="zipCode" placeholder="{{zip}}"/>
+                </div>
+                <hr />
+                <div class="Button mt-2">
+                  <button type="submit" id="submitBtn" class="fw-bold">Save 
+                  </button>
+                  <button type="reset" class="fw-bold cancelBtn">Clear</button>
+                  <button type="button" id="cancel-Btn" class="fw-bold cancelBtn">Cancel</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <!-- WalletMoney Modal starts-->
+          <div class="wallet-modal" id="walletModal">
+            <div class="wallet-modal-content">
+              <input type="number" class="form-control" id="addMoney" placeholder="Add amount &#8377;" name="money"
+                required />
+              <button type="button" class="btn fw-bold" id="addMoneyBtn">Add money</button>
+              <button type="button" class="btn fw-bold" id="cancelModal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer starts -->
+    <footer class="footer py-4">{{>footer}}</footer>
+    <!-- footer ends -->
+
+    <script>
+      async function selectAvatar(avatarOption) {
+        const selectedAvatar = avatarOption.querySelector("img").src;
+
+        const profilePic = {
+          pic: selectedAvatar
+        }
+
+        try{
+          const response = await fetch("/api/account", {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(profilePic),
+          });
+          if (!response.ok) {
+            const errorMsg = await response.json();
+            toastr.error(errorMsg);
+            return;
+          }
+          location.reload();
+        }catch(error){
+          console.error(error.message);
+          toastr.error(error.message);
+        }
+      }
+    </script>
+    <script type="module" src="../../modules/cartIndicator.js"></script>
+    <script type="module" src="../../modules/account.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

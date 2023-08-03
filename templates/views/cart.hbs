@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <link rel="stylesheet" href="../../css/cart.css" />
+  </head>
+  <body>
+    <!-- Navbar starts -->
+    {{>navbar}}
+    <!-- Navbar ends -->
+
+    <!-- Cart secton starts -->
+    <section class="d-flex justify-content-center align-items-center box">
+      <div
+        class="cart-page d-flex flex-column align-items-center"
+      >
+       <p class="m-0 fw-bold" id="sorry">Oops, your cart feels a bit lonely!&#128542; Fill it up with products and let the shopping journey begin!</p>
+       <div class="subTotal" id="subTotal" style="display: none;">
+        <p class="fw-bold text-black">SubTotal (<span id="totalItems">0</span>&nbsp;items):&nbsp;<span id="totalSummary">₹0.00</span></p>
+       </div>
+       <div id="cart-items">
+        <table>
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="cartItems">
+            {{!-- Fetching from js --}}
+          </tbody>
+        </table>
+      <button
+            type="btn"
+            class="btn btn-grad fw-bold text-white w-100 mt-4"
+            id="checkout"
+            >
+              Checkout
+      </button>
+      </div>
+      </div>
+    </section>
+    <!-- Cart secton ends -->
+
+    <!-- footer starts -->
+    <footer class="footer py-4">
+      {{>footer}}
+    </footer>
+    <!-- footer ends -->
+
+    <script>
+      function showProductDetails(productId) {
+        window.location.href = `/product?id=${productId}`;
+      }
+    </script>
+    <script type="module" src="../../modules/cart.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
