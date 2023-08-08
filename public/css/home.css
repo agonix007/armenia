@@ -559,3 +559,52 @@ li {
 .copyright a {
   color: var(--green);
 }
+
+
+/* Mobile responsive trying */
+
+/* @media screen and (max-width: 768px) {
+  .home .slide-container .slide{
+    padding: 24px 56px;
+  }
+  .home .slide-container .slide .content span,
+  .home .slide-container .slide .content p,
+  .home .slide-container .slide .content .btn{
+    font-size: 0.9em;
+  }
+  .home .slide-container .slide .content p{
+    margin-bottom: 0.5rem;
+    padding-right: 158px;
+  }
+  .home .slide-container .slide .content h3 {
+    font-size: 1.5em;
+  }
+  .home .slide-container .slide{
+    gap: 0;
+  }
+  .home #prev, .home #next{
+    height: 30px;
+    width: 30px;
+    transform: translateY(-50%);
+  }
+  .home #next{
+    right: 0.3em;
+  }
+  .home #prev{
+    left: 0.3em;
+  }
+  .home .slide-container .slide .image .shoe {
+    width: 40%;
+    position: absolute;
+    right: 0;
+    top: -102px;
+  }
+  .home .slide-container .slide .image .text{
+    width: 12em;
+    top: -118px;
+    left: 172px;
+  }
+  .form-control{
+    width: 246px;
+  }
+} */
