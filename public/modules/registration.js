@@ -1,5 +1,3 @@
-import config from "../config/config.js";
-
 toastr.options = {
   positionClass: "toast-bottom-right",
   closeButton: true,
@@ -55,7 +53,7 @@ const registerUser = async (event) => {
   try {
     loader.style.display = "block";
 
-    const response = await fetch(config.url + "/auth/register", {
+    const response = await fetch("/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

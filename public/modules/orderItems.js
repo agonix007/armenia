@@ -131,14 +131,8 @@ adminPanel();
 
 const logoutUser = async () => {
   try {
-    const response = await fetch("/auth/logout", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch("/api/auth/logout");
     if (response.ok) {
-      localStorage.removeItem("token");
       localStorage.removeItem("username");
       toastr.success("The Adventure Awaits");
       // Reloads the page

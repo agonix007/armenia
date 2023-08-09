@@ -1,5 +1,3 @@
-import config from "../config/config.js";
-
 toastr.options = {
   positionClass: "toast-bottom-right",
   closeButton: true,
@@ -90,7 +88,7 @@ const addToCart = async() => {
 
 const getProductDetails = async (productId) => {
   try {
-    const response = await fetch(config.url + `/products/${productId}`);
+    const response = await fetch(`/api/products/${productId}`);
     if (response.ok !== true) {
       throw new Error("Failed to load from backend.");
     }
@@ -139,20 +137,12 @@ adminPanel();
 
 const logoutUser = async () => {
   try {
-    const response = await fetch(config.url + "/auth/logout", {
-      method: "GET",
-      headers: {
-        // Authorization: localStorage.getItem("token"),
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch("/api/auth/logout");
     if (response.ok) {
-      localStorage.removeItem("token");
       localStorage.removeItem("username");
       toastr.success("The Adventure Awaits");
-      // Reloads the page
+
       setTimeout(() => {
-        // location.reload();
         window.location.href = "/";
       }, 1500);
     } else {

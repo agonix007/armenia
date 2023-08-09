@@ -1,5 +1,3 @@
-import config from "../config/config.js";
-
 toastr.options = {
   positionClass: "toast-bottom-right",
   closeButton: true,
@@ -234,20 +232,12 @@ adminPanel();
 
 const logoutUser = async () => {
   try {
-    const response = await fetch(config.url + "/auth/logout", {
-      method: "GET",
-      headers: {
-        // Authorization: localStorage.getItem("token"),
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch("/api/auth/logout");
     if (response.ok) {
-      localStorage.removeItem("token");
       localStorage.removeItem("username");
       toastr.success("The Adventure Awaits");
-      // Reloads the page
+
       setTimeout(() => {
-        // location.reload();
         window.location.href = "/";
       }, 1500);
     } else {
