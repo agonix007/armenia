@@ -54,15 +54,15 @@ header {
   background: linear-gradient(to right, #0a9e79 0%, #04b13e 51%, #02b076 100%);
   border-width: 0;
 }
-.dropdown-item:active{
+.dropdown-item:active {
   background-color: #0ab97f;
 }
 .auth {
   right: -5px;
   display: flex;
 }
-.authenticate{
-  display: none; 
+.authenticate {
+  display: none;
 }
 #account {
   /* dynamic in Js */
@@ -72,7 +72,7 @@ header {
   /* dynamic in Js */
   display: none;
 }
-#logout{
+#logout {
   cursor: pointer;
 }
 .register .btn {
@@ -113,7 +113,7 @@ li {
 .cart img {
   width: 38px;
 }
-.cart-value{
+.cart-value {
   position: absolute;
   top: 8px;
   left: 20px;
@@ -171,13 +171,13 @@ li {
   height: 80vh;
 }
 .product .col-6 {
-  height: calc(82vh - 70px); 
+  height: calc(82vh - 70px);
 }
-.box .product .left .left-content p{
-    margin-bottom: 4px;
-    font-weight: 600;
-    font-size: 12px;
-    color: rgb(161, 161, 161);
+.box .product .left .left-content p {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  color: rgb(161, 161, 161);
 }
 .box .product .imgBox {
   background-color: #f3f3f3;
@@ -188,37 +188,41 @@ li {
 .box .product .imgBox img {
   max-width: 85%;
   max-height: 85%;
-  mix-blend-mode:darken;
+  mix-blend-mode: darken;
 }
-.box .product .right .brandName{
-    margin-bottom: 0;
-    color: var(--deepgreen);
-    font-weight: 500;
-    font-size: 18px;
+.box .product .right .brandName {
+  margin-bottom: 0;
+  color: var(--deepgreen);
+  font-weight: 500;
+  font-size: 18px;
 }
-.box .product .right .specialPrice{
-    font-size: 16px;
-    color: var(--green);
+.box .product .right .specialPrice {
+  font-size: 16px;
+  color: var(--green);
 }
-.box .product .right .content p{
-    margin-bottom: 0;
-    letter-spacing: 1px;
-    font-weight: 500;
+.box .product .right .content p {
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
-.box .product .right .content .strike{
-    color: #7a7a7a;
-    text-decoration: line-through;
+.box .product .right .content .strike {
+  color: #7a7a7a;
+  text-decoration: line-through;
 }
-.box .product .right .content .ofr{
-    color: rgb(0, 168, 90);
-    font-weight: 500;
+.box .product .right .content .ofr {
+  color: rgb(0, 168, 90);
+  font-weight: 500;
 }
-.box .product .right .des{
-    font-size: 18px;
-    color: #353535;
+.box .product .right .des {
+  font-size: 18px;
+  color: #353535;
 }
 .btn-grad {
   background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.red-text {
+  color: red;
 }

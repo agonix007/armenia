@@ -33,7 +33,7 @@ const addingData = (data) => {
             <h2 class="fs-1 text-capitalize mb-0 pname">
               ${data.pname}
             </h2>
-            <p class="stock">In Stock</p>
+            <p class="stock" id="stockStatus">In Stock</p>
             <h6 class="specialPrice mb-1">Special Price</h6>
             <div class="d-flex align-items-center content">
               <p class="fs-3">&#x20B9;<span class="price">${data.price}</span>&ensp;</p>
@@ -56,10 +56,30 @@ const addingData = (data) => {
           </div>`;
   const addToCartButton = document.getElementById("addToCartButton");
   addToCartButton.addEventListener("click", () => addToCart());
+
+  const stockStatus = document.getElementById("stockStatus");
+  const quantityInStock = data.quantity;
+
+  if (quantityInStock <= 0) {
+    stockStatus.textContent = "Out of Stock";
+    stockStatus.classList.add("red-text");
+  } else if (quantityInStock <= 10) {
+    stockStatus.textContent = quantityInStock + " items left in Stock";
+    stockStatus.classList.add("red-text");
+  }
 };
 
-const addToCart = async() => {
+const addToCart = async () => {
   try {
+    const productData = await fetch(`/api/products/${productId}`);
+    if (productData.ok !== true) {
+      throw new Error("Failed to load from backend.");
+    }
+    const data = await productData.json();
+    if(data.quantity <=0){
+      throw new Error("Product is out of stock");
+    }
+
     const product = {
       productId: productId,
       quantity: 1,
@@ -76,15 +96,19 @@ const addToCart = async() => {
     if (!response.ok) {
       const errorMsg = await response.json();
       toastr.warning(errorMsg);
-      return
+      return;
     }
     toastr.success("Product added to cart successfully");
     location.reload();
   } catch (error) {
     console.log(error.message);
+    if (error.message === "Product is out of stock"){
+      toastr.warning(error.message);
+      return
+    }
     toastr.info("Please login to join the journey");
   }
-}
+};
 
 const getProductDetails = async (productId) => {
   try {
@@ -100,9 +124,6 @@ const getProductDetails = async (productId) => {
 };
 
 getProductDetails(productId);
-
-// const cartIndicator = document.getElementById("cartIndicator");
-// cartIndicator.textContent = localStorage.getItem("cartValue");
 
 const account = document.getElementById("account");
 const cart = document.getElementById("cartFeature");
@@ -129,7 +150,7 @@ const adminPanel = async () => {
   const adminPanelLink = document.getElementById("adminPanelLink");
   const response = await fetch("/api/account");
   const data = await response.json();
-  if(data.bio === "Admin"){
+  if (data.bio === "Admin") {
     adminPanelLink.style.display = "block";
   }
 };
