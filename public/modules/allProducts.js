@@ -16,6 +16,19 @@ const addingProducts = (data, isLoading) => {
 
     // Generate the HTML for each product
     data.forEach((product) => {
+      const truncatePname = truncateTextByWords(product.pname, 2);
+      let stockStatus = "";
+      let stockStatusClass = "";
+      if (product.quantity <= 0) {
+        stockStatus = "Out of Stock";
+        stockStatusClass = "red-text";
+      } else if (product.quantity <= 10) {
+        stockStatus = `${product.quantity} items left`;
+        stockStatusClass = "red-text"; // Apply red text color
+      } else {
+        stockStatus = "In Stock";
+      }
+
       allProducts.innerHTML += `  <div class="col-3">
                   <div
                     class="imgBox d-flex justify-content-center align-items-center" onclick="showProductDetails('${product._id}')"
@@ -24,7 +37,8 @@ const addingProducts = (data, isLoading) => {
                   </div>
                   <div class="content p-2 pt-3">
                     <p class="text-capitalize brand mb-0 fw-bold">${product.brand}</p>
-                    <p class="pname mb-1 fs-5">${product.pname}</p>
+                    <p class="pname mb-1 fs-5">${truncatePname}</p>
+                    <p class="m-0 ${stockStatusClass}">${stockStatus}</p>
                     <p class="price fw-bold fs-3 mb-2">&#x20B9;${product.price}</p>
                     <div class="star-rating mb-3">
                       <ul class="list-inline">
@@ -50,6 +64,16 @@ const addingProducts = (data, isLoading) => {
     });
   }
 };
+
+function truncateTextByWords(text, maxWords) {
+  const words = text.split(" ");
+  if (words.length <= maxWords) {
+    return text;
+  } else {
+    const truncatedWords = words.slice(0, maxWords).join(" ");
+    return truncatedWords + "...";
+  }
+}
 
 const getProducts = async () => {
   try {
@@ -94,7 +118,7 @@ const adminPanel = async () => {
   const adminPanelLink = document.getElementById("adminPanelLink");
   const response = await fetch("/api/account");
   const data = await response.json();
-  if(data.bio === "Admin"){
+  if (data.bio === "Admin") {
     adminPanelLink.style.display = "block";
   }
 };
