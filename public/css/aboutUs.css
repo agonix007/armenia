@@ -177,19 +177,21 @@ li {
   font-size: 1rem;
 }
 .description .btn {
-  background-color: var(--green);
-  color: #ffffff;
-  font-size: 1rem;
   padding: 6px 25px;
   margin-top: 10px;
   margin-left: 14px;
-  border-radius: 12px;
-  border: 2px solid var(--green);
+  background: linear-gradient(to right, #0a999e 0%, #04b194 51%, #02aab0 100%);
+  font-size: 1rem;
+  border: 1px solid #04b194;
+  color: white;
+  transition: 0.4s ease-in-out;
+  border-radius: 10px;
   font-weight: 600;
 }
 .description .btn:hover {
-  background-color: white;
-  color: var(--green);
+  border: 1px solid #04b194;
+  background: white;
+  color: #04b194;
 }
 
 /* footer */
