@@ -1,4 +1,4 @@
-const {Cart} = require("../models/cart");
+const { Cart } = require("../models/cart");
 const { Product } = require("../models/product");
 
 const getCartByUser = async (user) => {
@@ -6,7 +6,7 @@ const getCartByUser = async (user) => {
   if (!cart) {
     throw new Error("User doesn't have a cart");
   }
-  if(cart.cartItems.length === 0) {
+  if (cart.cartItems.length === 0) {
     throw new Error("User cart doesn't have any product");
   }
   return cart;
@@ -97,7 +97,7 @@ const totalPriceSummary = async(user, total) => {
   }
   cart.total = total;
   return await cart.save();
-}
+};
 
 const paymentMethod = async (user, option) => {
   const cart = await Cart.findOne({ email: user.email });
